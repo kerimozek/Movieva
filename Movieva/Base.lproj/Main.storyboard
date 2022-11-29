@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="1648" y="-74"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailVC-->
         <scene sceneID="423-uX-dMj">
             <objects>
-                <viewController id="LAq-yH-E8D" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="LAq-yH-E8D" customClass="DetailVC" customModule="Movieva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6CT-TN-TMj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
