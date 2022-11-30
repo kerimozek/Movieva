@@ -44,6 +44,10 @@
                 <constraint firstAttribute="trailing" secondItem="HNt-qi-y3c" secondAttribute="trailing" id="QQw-3d-TH3"/>
             </constraints>
             <size key="customSize" width="113" height="156"/>
+            <connections>
+                <outlet property="bottomCellImageView" destination="Khs-vJ-29D" id="SgT-Fp-pT3"/>
+                <outlet property="bottomCellView" destination="HNt-qi-y3c" id="k9q-94-9p6"/>
+            </connections>
             <point key="canvasLocation" x="177.536231884058" y="145.3125"/>
         </collectionViewCell>
     </objects>

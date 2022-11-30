@@ -16,10 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-Mx-CBQ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-Mx-CBQ">
                                 <rect key="frame" x="0.0" y="74" width="414" height="331.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ivt-Im-SsC">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ivt-Im-SsC">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -45,10 +45,10 @@
                                     <action selector="segmentedControlTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="afb-Ls-NfB"/>
                                 </connections>
                             </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-H8-iIh">
-                                <rect key="frame" x="0.0" y="454.5" width="414" height="358.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Trs-4q-Qde">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-H8-iIh">
+                                <rect key="frame" x="16" y="454.5" width="382" height="358.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Trs-4q-Qde">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -70,10 +70,10 @@
                             <constraint firstItem="icQ-Mx-CBQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Iw3-fv-eoi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZCb-H8-iIh" secondAttribute="bottom" id="MbH-mL-1QC"/>
                             <constraint firstItem="icQ-Mx-CBQ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.37" id="SzF-HP-C6W"/>
-                            <constraint firstItem="ZCb-H8-iIh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZHW-MS-af1"/>
+                            <constraint firstItem="ZCb-H8-iIh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZHW-MS-af1"/>
                             <constraint firstItem="icQ-Mx-CBQ" firstAttribute="top" secondItem="eVN-aQ-hOT" secondAttribute="bottom" constant="8" id="fgU-EU-Fgw"/>
                             <constraint firstItem="78F-C1-lBN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jfu-a4-SKY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZCb-H8-iIh" secondAttribute="trailing" id="lo0-P7-xF9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZCb-H8-iIh" secondAttribute="trailing" constant="16" id="lo0-P7-xF9"/>
                             <constraint firstItem="eVN-aQ-hOT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rOc-iA-bz4"/>
                             <constraint firstItem="ZCb-H8-iIh" firstAttribute="top" secondItem="78F-C1-lBN" secondAttribute="bottom" constant="4" id="w7b-8G-9Ue"/>
                         </constraints>
