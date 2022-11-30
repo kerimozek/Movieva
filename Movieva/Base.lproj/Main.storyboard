@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bFx-Sd-gO4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -11,7 +11,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Movieva" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" id="BYZ-38-t0r" customClass="MainVC" customModule="Movieva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,6 +41,9 @@
                                     <segment title="Upcoming"/>
                                     <segment title="Popular"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="afb-Ls-NfB"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-H8-iIh">
                                 <rect key="frame" x="0.0" y="454.5" width="414" height="358.5"/>
@@ -76,6 +79,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="xBl-EU-lZ4"/>
+                    <connections>
+                        <outlet property="bottomCollectionView" destination="ZCb-H8-iIh" id="0Dz-yk-Clw"/>
+                        <outlet property="segmentedControl" destination="78F-C1-lBN" id="WvN-Wi-71o"/>
+                        <outlet property="topCollectionView" destination="icQ-Mx-CBQ" id="cwy-R7-N1M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,7 +92,7 @@
         <!--Item 2-->
         <scene sceneID="ZEL-DU-DEx">
             <objects>
-                <viewController id="0vS-m6-Vbt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WatchListVC" id="0vS-m6-Vbt" customClass="WatchListVC" customModule="Movieva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BzD-Bq-SnZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +120,7 @@
         <!--Item 1-->
         <scene sceneID="KnX-M2-JT3">
             <objects>
-                <viewController id="Nej-3P-Hpp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" id="Nej-3P-Hpp" customClass="SearchVC" customModule="Movieva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q1m-EF-4R4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,7 +325,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="y8n-W0-d2d">
             <objects>
-                <tabBarController id="bFx-Sd-gO4" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="bFx-Sd-gO4" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7ZB-je-Y1q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
