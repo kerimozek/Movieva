@@ -31,7 +31,7 @@ class BottomCell: UICollectionViewCell {
     
     func configureCell(item: ResultMovie) {
         //     let image = "https://i.dlpng.com/static/png/7210818_preview.png"
-        let imageURL = NetworkHelper.shared.baseImageUrl + item.posterPath!
+        let imageURL = NetworkHelper.shared.baseImageUrl
         self.bottomCellImageView.kf.setImage(with: URL(string: imageURL))
     }
 }
