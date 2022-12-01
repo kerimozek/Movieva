@@ -26,7 +26,7 @@ class MainVM {
             
             if let items = items {
                 self.topRated = items.results!
-                print(self.topRated)
+                print(self.topRated.count)
                 self.delegate?.didGetTopRated(isDone: true)
             }
             complete(errorMessage)

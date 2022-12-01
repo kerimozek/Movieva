@@ -13,7 +13,9 @@ class TopRatedManager {
     
     // MARK: - TOP RATED https://api.themoviedb.org/3/movie/top_rated?api_key=fd24fe5ba58021d3f54a2a7c04297951&language=en-US&page=1 -
     
-    let url = "\(NetworkHelper.shared.baseUrl)top_rated?api_key=\(NetworkHelper.shared.apiKey)&language=en-US&page=1 "
+    
+     let url = "\(NetworkHelper.shared.baseUrl)popular?api_key=\(NetworkHelper.shared.apiKey)&language=en-US&page=1"
+//    let url = "\(NetworkHelper.shared.baseUrl)top_rated?api_key=\(NetworkHelper.shared.apiKey)&language=en-US&page=1 "
     
     func getTopRated(complete: @escaping((TopRated?, String?)->())) {
         NetworkManager.shared.request(type: TopRated.self,
