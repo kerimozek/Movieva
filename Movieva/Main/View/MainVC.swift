@@ -86,7 +86,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.topCollectionView {
-            return CGSize(width: collectionView.frame.width / 1.5 , height: collectionView.frame.height)
+            return CGSize(width: collectionView.frame.width / 1.3 , height: collectionView.frame.height)
         } else {
             return CGSize(width: (collectionView.frame.width + 60 ) / 4 , height: (collectionView.frame.height + 40) / 2.5)
         }
