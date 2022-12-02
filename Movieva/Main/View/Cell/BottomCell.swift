@@ -16,7 +16,7 @@ class BottomCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        bottomCellView.backgroundColor = UIColor(red: 0.60, green: 0.66, blue: 0.97, alpha: 1.00)
+        bottomCellView.backgroundColor = UIColor(red: 0.85, green: 0.20, blue: 0.31, alpha: 1.00)
         bottomCellView.layer.cornerRadius = 10
         bottomCellView.layer.shadowColor = UIColor.darkGray.cgColor
         bottomCellView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
@@ -29,7 +29,7 @@ class BottomCell: UICollectionViewCell {
     }
     
     func configureCell(item: ResultMovie) {
-        let image2 = "https://images5.alphacoders.com/111/1111276.jpg"
+        let image2 = "https://www.ubuy.com.tr/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjEzUUdKWkl4SkwuX0FDX1NMMTUwMF8uanBn.jpg"
         if item.posterPath != nil {
             let image = NetworkHelper.shared.baseImageUrl + item.posterPath!
             self.bottomCellImageView.kf.setImage(with: URL(string: image))

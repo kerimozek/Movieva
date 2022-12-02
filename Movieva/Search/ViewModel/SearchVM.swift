@@ -21,10 +21,11 @@ class SearchVM {
     var searchMovie: [ResultMovie] = []
 
     func getMovies(complete: @escaping((String?)->())) {
-        PopularManager.shared.getPopular { items, errorMessage in
+        PopularManager.shared.getPopular { [self] items, errorMessage in
             
             if let items = items {
                 self.searchMovie = items.results!
+                print(searchMovie.first?.posterPath as Any)
                 self.delegate?.didGetMovies(isDone: true)
             }
             complete(errorMessage)

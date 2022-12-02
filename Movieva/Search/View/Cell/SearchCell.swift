@@ -19,7 +19,7 @@ class SearchCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        searchCellView.backgroundColor = UIColor(red: 0.60, green: 0.66, blue: 0.97, alpha: 1.00)
+        searchCellView.backgroundColor = UIColor(red: 0.85, green: 0.20, blue: 0.31, alpha: 1.00)
         searchCellView.layer.cornerRadius = 10
         searchCellView.layer.shadowColor = UIColor.darkGray.cgColor
         searchCellView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
@@ -31,18 +31,17 @@ class SearchCell: UITableViewCell {
     }
 
     func configureCell(item: ResultMovie) {
-        let image2 = "https://images5.alphacoders.com/111/1111276.jpg"
+        let image2 = "https://render.fineartamerica.com/images/rendered/default/poster/8/10/break/images-medium-5/bryan-cranston-as-walter-white--tv-serie-breaking-bad-gabriel-t-toro.jpg"
         self.movieTitle.text = item.title
         if item.posterPath != nil {
             let image = NetworkHelper.shared.baseImageUrl + item.posterPath!
             self.searchImageView.kf.setImage(with: URL(string: image))
-            print(image)
         } else {
             self.searchImageView.kf.setImage(with: URL(string: image2))
         }
-        self.movieGenre.text = item.originalLanguage
-        self.movieYear.text = item.releaseDate
-        self.movieMinutes.text = "\(item.popularity ?? 31)"
+  //      self.movieGenre.text = item.originalLanguage
+  //      self.movieYear.text = item.releaseDate
+ //       self.movieMinutes.text = "\(item.popularity ?? 31)"
     }
     
 }
