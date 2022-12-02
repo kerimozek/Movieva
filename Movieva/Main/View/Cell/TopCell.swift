@@ -16,7 +16,7 @@ class TopCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        topCellView.backgroundColor = UIColor(red: 0.60, green: 0.66, blue: 0.97, alpha: 1.00)
+    //    topCellView.backgroundColor = UIColor(red: 0.85, green: 0.20, blue: 0.31, alpha: 1.00)
         topCellView.layer.cornerRadius = 10
         topCellView.layer.shadowColor = UIColor.darkGray.cgColor
         topCellView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
@@ -29,7 +29,7 @@ class TopCell: UICollectionViewCell {
     
     func configureCell(item: ResultMovie) {
 
-        let image2 = "https://images5.alphacoders.com/111/1111276.jpg"
+        let image2 = "https://static.wikia.nocookie.net/jujutsu-kaisen/images/5/5a/Satoru_Gojo_arrives_on_the_battlefield_%28Anime%29.png/revision/latest?cb=20210226205256"
         self.movieLabel.text = item.title
         if item.posterPath != nil {
             let image = NetworkHelper.shared.baseImageUrl + item.posterPath!
