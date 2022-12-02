@@ -15,13 +15,14 @@ class DetailVC: UIViewController {
     @IBOutlet weak var containerViewCast: UIView!
     @IBOutlet weak var littleView: UIView!
     @IBOutlet weak var imageViewBottom: UIImageView!
-    
     @IBOutlet weak var selectedSegment: UISegmentedControl!
+    
+    var detail: BaseModel?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-       
     }
     
     private func setupUI() {
