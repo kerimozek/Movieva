@@ -28,14 +28,14 @@ class TopCell: UICollectionViewCell {
     }
     
     func configureCell(item: ResultMovie) {
-        let imageG = "https://i.dlpng.com/static/png/7210818_preview.png"
+
+        let image2 = "https://images5.alphacoders.com/111/1111276.jpg"
         self.movieLabel.text = item.title
-        let image = item.posterPath
-        if let image = image {
-            let imageURL = NetworkHelper.shared.baseImageUrl
-            self.topCellImageView.kf.setImage(with: URL(string: imageURL + image))
+        if item.posterPath != nil {
+            let image = NetworkHelper.shared.baseImageUrl + item.posterPath!
+            self.topCellImageView.kf.setImage(with: URL(string: image))
         } else {
-            self.topCellImageView.kf.setImage(with: URL(string: imageG))
+            self.topCellImageView.kf.setImage(with: URL(string: image2))
         }
     }
 }

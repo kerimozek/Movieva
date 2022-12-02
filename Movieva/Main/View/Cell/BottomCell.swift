@@ -29,13 +29,12 @@ class BottomCell: UICollectionViewCell {
     }
     
     func configureCell(item: ResultMovie) {
-        let imageG = "https://i.dlpng.com/static/png/7210818_preview.png"
-        let image = item.posterPath
-        if let image = image {
-            let imageURL = NetworkHelper.shared.baseImageUrl
-            self.bottomCellImageView.kf.setImage(with: URL(string: imageURL + image))
+        let image2 = "https://images5.alphacoders.com/111/1111276.jpg"
+        if item.posterPath != nil {
+            let image = NetworkHelper.shared.baseImageUrl + item.posterPath!
+            self.bottomCellImageView.kf.setImage(with: URL(string: image))
         } else {
-            self.bottomCellImageView.kf.setImage(with: URL(string: imageG))
+            self.bottomCellImageView.kf.setImage(with: URL(string: image2))
         }
     }
 }

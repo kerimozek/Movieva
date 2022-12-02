@@ -6,3 +6,31 @@
 //
 
 import Foundation
+
+protocol SearchViewModelDelegate: AnyObject {
+    func didGetMovies(isDone: Bool)
+}
+
+
+class SearchVM {
+    
+    static let shared = SearchVM()
+    weak var delegate: SearchViewModelDelegate?
+    private init () { }
+    
+    var searchMovie: [ResultMovie] = []
+
+    func getMovies(complete: @escaping((String?)->())) {
+        PopularManager.shared.getPopular { items, errorMessage in
+            
+            if let items = items {
+                self.searchMovie = items.results!
+                self.delegate?.didGetMovies(isDone: true)
+            }
+            complete(errorMessage)
+            self.delegate?.didGetMovies(isDone: false)
+        }
+    }
+    
+}
+
