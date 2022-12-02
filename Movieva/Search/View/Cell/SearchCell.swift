@@ -36,7 +36,6 @@ class SearchCell: UITableViewCell {
         if item.posterPath != nil {
             let image = NetworkHelper.shared.baseImageUrl + item.posterPath!
             self.searchImageView.kf.setImage(with: URL(string: image))
-            print(image)
         } else {
             self.searchImageView.kf.setImage(with: URL(string: image2))
         }
