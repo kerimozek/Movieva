@@ -21,7 +21,7 @@ class WatchListVM {
     var watchListMovie: [ResultMovie] = []
 
     func getMovies(complete: @escaping((String?)->())) {
-        PopularManager.shared.getPopular { [self] items, errorMessage in
+        PopularManager.shared.getPopular(page: 1) { [self] items, errorMessage in
             
             if let items = items {
                 self.watchListMovie = items.results!

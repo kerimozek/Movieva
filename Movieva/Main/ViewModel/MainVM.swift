@@ -20,13 +20,14 @@ class MainVM {
     
     var topRated: [ResultMovie] = []
     var popular: [ResultMovie] = []
+    private var page: Int = 1
 
     func getTopRated(complete: @escaping((String?)->())) {
-        TopRatedManager.shared.getTopRated { items, errorMessage in
+        TopRatedManager.shared.getTopRated(page: 1) { items, errorMessage in
             
             if let items = items {
+                self.page += 1
                 self.topRated = items.results!
-                print(self.topRated.count)
                 self.delegate?.didGetTopRated(isDone: true)
             }
             complete(errorMessage)
@@ -35,11 +36,11 @@ class MainVM {
     }
     
     func getPopular(complete: @escaping((String?)->())) {
-        PopularManager.shared.getPopular { items, errorMessage in
+        PopularManager.shared.getPopular(page: page) { items, errorMessage in
             
             if let items = items {
-                self.popular = items.results!
-                print(self.popular.count)
+                self.popular.append(contentsOf: items.results!)
+                self.page += 1
                 self.delegate?.didGetPopular(isDone: true)
             }
             complete(errorMessage)
@@ -47,15 +48,4 @@ class MainVM {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-// MARK: - POPULAR https://api.themoviedb.org/3/movie/popular?api_key=fd24fe5ba58021d3f54a2a7c04297951&language=en-US&page=1 -
 
