@@ -10,19 +10,19 @@ import Foundation
 protocol BaseModel {
     
     var adult: Bool? { get set }
-    var backdropPath: String? { get set }
-    var genreIDS: [Int]? { get set }
+    var backdrop_path: String? { get set }
+    var genre_ids: [Int]? { get set }
     var id: Int? { get set }
-    var originalLanguage: String? { get set }
-    var originalTitle: String? { get set }
+    var original_language: String? { get set }
+    var original_title: String? { get set }
     var overview: String? { get set }
     var popularity: Double? { get set }
-    var posterPath: String? { get set }
-    var releaseDate: String? { get set }
+    var poster_path: String? { get set }
+    var release_date: String? { get set }
     var title: String? { get set }
     var video: Bool? { get set }
-    var voteAverage: Double? { get set }
-    var voteCount: Int? { get set }
+    var vote_average: Double? { get set }
+    var vote_count: Int? { get set }
     
     
 }

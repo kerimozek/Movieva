@@ -31,8 +31,8 @@ class TopCell: UICollectionViewCell {
 
         let image2 = "https://static.wikia.nocookie.net/jujutsu-kaisen/images/5/5a/Satoru_Gojo_arrives_on_the_battlefield_%28Anime%29.png/revision/latest?cb=20210226205256"
         self.movieLabel.text = item.title
-        if item.posterPath != nil {
-            let image = NetworkHelper.shared.baseImageUrl + item.posterPath!
+        if item.backdrop_path != nil {
+            let image = NetworkHelper.shared.baseImageUrl + item.backdrop_path!
             self.topCellImageView.kf.setImage(with: URL(string: image))
         } else {
             self.topCellImageView.kf.setImage(with: URL(string: image2))

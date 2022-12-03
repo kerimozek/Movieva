@@ -33,8 +33,8 @@ class SearchCell: UITableViewCell {
     func configureCell(item: ResultMovie) {
         let image2 = "https://render.fineartamerica.com/images/rendered/default/poster/8/10/break/images-medium-5/bryan-cranston-as-walter-white--tv-serie-breaking-bad-gabriel-t-toro.jpg"
         self.movieTitle.text = item.title
-        if item.posterPath != nil {
-            let image = NetworkHelper.shared.baseImageUrl + item.posterPath!
+        if item.poster_path != nil {
+            let image = NetworkHelper.shared.baseImageUrl + item.poster_path!
             self.searchImageView.kf.setImage(with: URL(string: image))
         } else {
             self.searchImageView.kf.setImage(with: URL(string: image2))

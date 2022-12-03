@@ -33,8 +33,8 @@ class WatchListCell: UITableViewCell {
     func configureCell(item: ResultMovie) {
         let image2 = "https://pbs.twimg.com/media/E_FxqkSVgAQZKPM.jpg"
         self.movieTitle.text = item.title
-        if item.posterPath != nil {
-            let image = NetworkHelper.shared.baseImageUrl + item.posterPath!
+        if item.poster_path != nil {
+            let image = NetworkHelper.shared.baseImageUrl + item.poster_path!
             self.watchListImageView.kf.setImage(with: URL(string: image))
         } else {
             self.watchListImageView.kf.setImage(with: URL(string: image2))

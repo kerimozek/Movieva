@@ -23,28 +23,14 @@ struct Search: Codable {
 // MARK: - Result
 struct SearchMovie: Codable, BaseModel {
     var adult: Bool?
-    var backdropPath: String?
-    var genreIDS: [Int]?
+    var backdrop_path: String?
+    var genre_ids: [Int]?
     var id: Int?
-    var originalLanguage, originalTitle, overview: String?
+    var original_language, original_title, overview: String?
     var popularity: Double?
-    var posterPath, releaseDate, title: String?
+    var poster_path: String?
+    var release_date, title: String?
     var video: Bool?
-    var voteAverage: Double?
-    var voteCount: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case adult
-        case backdropPath
-        case genreIDS
-        case id
-        case originalLanguage
-        case originalTitle
-        case overview, popularity
-        case posterPath
-        case releaseDate
-        case title, video
-        case voteAverage
-        case voteCount
+    var vote_average: Double?
+    var vote_count: Int?
     }
-}
