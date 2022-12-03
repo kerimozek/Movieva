@@ -33,6 +33,7 @@ class MainVC: UIViewController {
         topCollectionView.register(.init(nibName: topCell, bundle: nil), forCellWithReuseIdentifier: topCell)
         bottomCollectionView.register(.init(nibName: bottomCell, bundle: nil), forCellWithReuseIdentifier: bottomCell)
         MainVM.shared.delegate = self
+        
         MainVM.shared.getTopRated{ errorMessage in
             if let errorMessage = errorMessage {
                 print("error \(errorMessage)")
@@ -51,7 +52,7 @@ class MainVC: UIViewController {
     }
 }
 
-extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.topCollectionView {
@@ -90,8 +91,26 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         } else {
             return CGSize(width: (collectionView.frame.width + 60 ) / 4 , height: (collectionView.frame.height + 40) / 2.5)
         }
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView == bottomCollectionView {
+            let offsetY = scrollView.contentOffset.y
+            let contentHeight = scrollView.contentSize.height
+            let height = scrollView.frame.size.height
+            
+            if offsetY >= contentHeight - (1.7 * height) {
+                
+                MainVM.shared.getPopular{ errorMessage in
+                    if let errorMessage = errorMessage {
+                        print("error \(errorMessage)")
+                    }
+                }
+            }
+        }
         
     }
+    
 }
 
 extension MainVC: MainVMDelegate {

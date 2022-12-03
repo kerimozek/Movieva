@@ -109,14 +109,12 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-     //   vc.detail = SearchVM.shared.searchMovie[indexPath.row]
+        //   vc.detail = SearchVM.shared.searchMovie[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        230
-//    }
 }
+
 
 extension SearchVC: SearchViewModelDelegate {
     func didGetMovies(isDone: Bool) {
