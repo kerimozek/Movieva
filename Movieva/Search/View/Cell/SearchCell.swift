@@ -39,9 +39,6 @@ class SearchCell: UITableViewCell {
         } else {
             self.searchImageView.kf.setImage(with: URL(string: image2))
         }
-  //      self.movieGenre.text = item.originalLanguage
-  //      self.movieYear.text = item.releaseDate
- //       self.movieMinutes.text = "\(item.popularity ?? 31)"
     }
     
 }

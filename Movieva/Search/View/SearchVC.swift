@@ -34,6 +34,8 @@ class SearchVC: UIViewController {
         configureSearchController()
         searchTableView.reloadData()
     }
+    
+    
 
     private func configureSearchController() {
         searchController.loadViewIfNeeded()

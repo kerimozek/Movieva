@@ -21,7 +21,7 @@ class SearchVM {
     var searchMovie: [ResultMovie] = []
 
     func getMovies(complete: @escaping((String?)->())) {
-        PopularManager.shared.getPopular { [self] items, errorMessage in
+        PopularManager.shared.getPopular(page: 1) { [self] items, errorMessage in
             
             if let items = items {
                 self.searchMovie = items.results!

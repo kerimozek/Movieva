@@ -22,7 +22,7 @@ class MainVM {
     var popular: [ResultMovie] = []
 
     func getTopRated(complete: @escaping((String?)->())) {
-        TopRatedManager.shared.getTopRated { items, errorMessage in
+        TopRatedManager.shared.getTopRated(page: 1) { items, errorMessage in
             
             if let items = items {
                 self.topRated = items.results!
@@ -34,7 +34,7 @@ class MainVM {
     }
     
     func getPopular(complete: @escaping((String?)->())) {
-        PopularManager.shared.getPopular { items, errorMessage in
+        PopularManager.shared.getPopular(page: 1) { items, errorMessage in
             
             if let items = items {
                 self.popular = items.results!
