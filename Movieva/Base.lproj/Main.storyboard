@@ -135,7 +135,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jOl-PC-UyI"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jOl-PC-UyI" firstAttribute="bottom" secondItem="HsB-ou-0g8" secondAttribute="bottom" id="65I-cq-DSg"/>
                             <constraint firstItem="HsB-ou-0g8" firstAttribute="leading" secondItem="jOl-PC-UyI" secondAttribute="leading" constant="16" id="cGA-kw-FUE"/>
@@ -484,7 +484,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="L2G-yh-nDd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.1647058824" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

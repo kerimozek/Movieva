@@ -19,7 +19,7 @@ class SearchCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        searchCellView.backgroundColor = UIColor(red: 0.85, green: 0.20, blue: 0.31, alpha: 1.00)
+     //   searchCellView.backgroundColor = UIColor(red: 0.85, green: 0.20, blue: 0.31, alpha: 1.00)
         searchCellView.layer.cornerRadius = 10
         searchCellView.layer.shadowColor = UIColor.darkGray.cgColor
         searchCellView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
