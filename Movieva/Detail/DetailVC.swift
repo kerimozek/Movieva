@@ -28,6 +28,9 @@ class DetailVC: UIViewController {
     private func setupUI() {
         imageViewBottom.layer.cornerRadius = 6
         selectedSegment.selectedSegmentIndex = 0
+        selectedSegment.layer.cornerRadius = 8
+        selectedSegment.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
+        selectedSegment.setTitleTextAttributes([.foregroundColor: UIColor(red: 0.85, green: 0.84, blue: 0.91, alpha: 1.00)], for: .normal)
         containerViewReviews.alpha = 0
         containerViewCast.alpha = 0
     }

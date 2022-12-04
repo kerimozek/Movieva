@@ -28,6 +28,9 @@ class MainVC: UIViewController {
         topCollectionView.dataSource = self
         bottomCollectionView.delegate = self
         bottomCollectionView.dataSource = self
+        segmentedControl.layer.cornerRadius = 8
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor(red: 0.85, green: 0.84, blue: 0.91, alpha: 1.00)], for: .normal)
         self.view.addSubview(topCollectionView)
         self.view.addSubview(bottomCollectionView)
         topCollectionView.register(.init(nibName: topCell, bundle: nil), forCellWithReuseIdentifier: topCell)

@@ -17,36 +17,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-Mx-CBQ">
-                                <rect key="frame" x="0.0" y="76.5" width="414" height="269"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="269"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="12" id="ivt-Im-SsC">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ivt-Im-SsC">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="What do you want to watch ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVN-aQ-hOT">
-                                <rect key="frame" x="24" y="44" width="366" height="24.5"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="16" y="60" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.85490196080000003" green="0.84313725490000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="78F-C1-lBN">
-                                <rect key="frame" x="16" y="345.5" width="382" height="35"/>
+                                <rect key="frame" x="16" y="377" width="382" height="35"/>
+                                <color key="backgroundColor" red="0.054901960784313725" green="0.043137254901960784" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Now Playing"/>
                                     <segment title="Top Rated"/>
                                     <segment title="Upcoming"/>
                                     <segment title="Popular"/>
                                 </segments>
+                                <color key="tintColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="selectedSegmentTintColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="segmentedControlTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="afb-Ls-NfB"/>
                                 </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-H8-iIh">
-                                <rect key="frame" x="16" y="383.5" width="382" height="429.5"/>
+                                <rect key="frame" x="16" y="427" width="382" height="386"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Trs-4q-Qde">
                                     <size key="itemSize" width="128" height="128"/>
@@ -58,24 +61,23 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.023529411760000001" green="0.01176470588" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="78F-C1-lBN" firstAttribute="top" secondItem="icQ-Mx-CBQ" secondAttribute="bottom" id="7h4-PW-pch"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="78F-C1-lBN" secondAttribute="trailing" constant="16" id="8OF-N7-xRi"/>
-                            <constraint firstItem="eVN-aQ-hOT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="BFy-gX-vE0"/>
+                            <constraint firstItem="eVN-aQ-hOT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BFy-gX-vE0"/>
                             <constraint firstItem="78F-C1-lBN" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.038" id="E0g-8l-Wsr"/>
-                            <constraint firstItem="ZCb-H8-iIh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.479353" id="GVX-xp-W34"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eVN-aQ-hOT" secondAttribute="trailing" constant="24" id="HPU-Ie-Oh9"/>
                             <constraint firstItem="icQ-Mx-CBQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ip4-Up-igX"/>
                             <constraint firstItem="icQ-Mx-CBQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Iw3-fv-eoi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZCb-H8-iIh" secondAttribute="bottom" id="MbH-mL-1QC"/>
                             <constraint firstItem="icQ-Mx-CBQ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="YHS-Gc-2VI"/>
                             <constraint firstItem="ZCb-H8-iIh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZHW-MS-af1"/>
-                            <constraint firstItem="icQ-Mx-CBQ" firstAttribute="top" secondItem="eVN-aQ-hOT" secondAttribute="bottom" constant="8" id="fgU-EU-Fgw"/>
+                            <constraint firstItem="icQ-Mx-CBQ" firstAttribute="top" secondItem="eVN-aQ-hOT" secondAttribute="bottom" constant="24" id="fgU-EU-Fgw"/>
                             <constraint firstItem="78F-C1-lBN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jfu-a4-SKY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZCb-H8-iIh" secondAttribute="trailing" constant="16" id="lo0-P7-xF9"/>
-                            <constraint firstItem="eVN-aQ-hOT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rOc-iA-bz4"/>
-                            <constraint firstItem="ZCb-H8-iIh" firstAttribute="top" secondItem="78F-C1-lBN" secondAttribute="bottom" constant="4" id="w7b-8G-9Ue"/>
+                            <constraint firstItem="eVN-aQ-hOT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="rOc-iA-bz4"/>
+                            <constraint firstItem="ZCb-H8-iIh" firstAttribute="top" secondItem="78F-C1-lBN" secondAttribute="bottom" constant="16" id="w7b-8G-9Ue"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="xBl-EU-lZ4"/>
@@ -104,7 +106,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m1g-5k-0eF"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.023529411760000001" green="0.01176470588" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="m1g-5k-0eF" firstAttribute="bottom" secondItem="Fpm-Rn-sW0" secondAttribute="bottom" id="2kj-cZ-fJc"/>
                             <constraint firstItem="m1g-5k-0eF" firstAttribute="trailing" secondItem="Fpm-Rn-sW0" secondAttribute="trailing" constant="16" id="KWO-1L-OiE"/>
@@ -135,7 +137,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jOl-PC-UyI"/>
-                        <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.023529411764705882" green="0.011764705882352941" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jOl-PC-UyI" firstAttribute="bottom" secondItem="HsB-ou-0g8" secondAttribute="bottom" id="65I-cq-DSg"/>
                             <constraint firstItem="HsB-ou-0g8" firstAttribute="leading" secondItem="jOl-PC-UyI" secondAttribute="leading" constant="16" id="cGA-kw-FUE"/>
@@ -306,7 +308,7 @@
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="510-9d-5u7"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.023529411760000001" green="0.01176470588" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="whm-TW-zJg" firstAttribute="height" secondItem="6CT-TN-TMj" secondAttribute="height" multiplier="0.33" id="1xJ-Fy-gMz"/>
                             <constraint firstItem="qPT-dq-njH" firstAttribute="top" secondItem="rPj-GL-vF2" secondAttribute="bottom" constant="12" id="1yg-9d-nDI"/>
@@ -485,7 +487,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="0.0" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.14117647059999999" green="0.1647058824" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.023529411760000001" green="0.01176470588" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
