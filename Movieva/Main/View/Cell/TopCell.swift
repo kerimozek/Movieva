@@ -18,12 +18,12 @@ class TopCell: UICollectionViewCell {
         
     //    topCellView.backgroundColor = UIColor(red: 0.85, green: 0.20, blue: 0.31, alpha: 1.00)
         topCellView.layer.cornerRadius = 10
-        topCellView.layer.shadowColor = UIColor.darkGray.cgColor
-        topCellView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
+        topCellView.layer.shadowColor = UIColor(red: 0.08, green: 0.06, blue: 0.22, alpha: 1.00).cgColor
+        topCellView.layer.shadowOffset = CGSize(width: 6.0, height: 6.0)
         topCellView.layer.shadowRadius = 4.0
-        topCellView.layer.shadowOpacity = 0.4
+        topCellView.layer.shadowOpacity = 1
         
-        topCellImageView.layer.cornerRadius = 10
+        topCellImageView.layer.cornerRadius = 24
         topCellImageView.clipsToBounds = true
     }
     
