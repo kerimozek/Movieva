@@ -48,7 +48,10 @@ class SearchVC: UIViewController {
         self.navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         searchController.searchBar.placeholder = "Search For Movie.."
-  
+        searchController.searchBar.searchTextField.leftView?.tintColor = .white
+        searchController.searchBar.searchTextField.layer.borderWidth = 1
+        searchController.searchBar.searchTextField.layer.borderColor = CGColor.init(gray: 0.9, alpha: 0.5)
+        searchController.searchBar.searchTextField.layer.cornerRadius = 6
     }
 
 }
