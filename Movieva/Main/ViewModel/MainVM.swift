@@ -10,6 +10,7 @@ import Foundation
 protocol MainVMDelegate: AnyObject {
     func didGetTopRated(isDone: Bool)
     func didGetPopular(isDone: Bool)
+    func didGetLatest(isDone: Bool)
 }
 
 class MainVM {
@@ -20,6 +21,7 @@ class MainVM {
     
     var topRated: [ResultMovie] = []
     var popular: [ResultMovie] = []
+    var latest: [ResultMovie] = []
     private var page: Int = 1
 
     func getTopRated(complete: @escaping((String?)->())) {
@@ -42,6 +44,19 @@ class MainVM {
                 self.popular.append(contentsOf: items.results!)
                 self.page += 1
                 self.delegate?.didGetPopular(isDone: true)
+            }
+            complete(errorMessage)
+            self.delegate?.didGetPopular(isDone: false)
+        }
+    }
+    
+    func getLatest(complete: @escaping((String?)->())) {
+        LatestManager.shared.getLatest(page: page) { items, errorMessage in
+            
+            if let items = items {
+                self.latest.append(contentsOf: items.results!)
+                self.page += 1
+                self.delegate?.didGetLatest(isDone: true)
             }
             complete(errorMessage)
             self.delegate?.didGetPopular(isDone: false)

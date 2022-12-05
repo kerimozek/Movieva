@@ -9,32 +9,30 @@ import UIKit
 
 class MainVC: UIViewController {
 
+    @IBOutlet weak var upcomingCollectionView: UIView!
+    @IBOutlet weak var popularCollectionView: UIView!
+    @IBOutlet weak var latestCollectionView: UIView!
     @IBOutlet weak var topCollectionView: UICollectionView!
-    @IBOutlet weak var bottomCollectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     let topCell = "TopCell"
-    let bottomCell = "BottomCell"
-    
-    
-    
+
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
       setupUI()
     }
 
-    
     private func setupUI() {
         topCollectionView.delegate = self
         topCollectionView.dataSource = self
-        bottomCollectionView.delegate = self
-        bottomCollectionView.dataSource = self
         segmentedControl.layer.cornerRadius = 8
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
         segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor(red: 0.85, green: 0.84, blue: 0.91, alpha: 1.00)], for: .normal)
+        segmentedControl.selectedSegmentIndex = 0
+        self.popularCollectionView.alpha = 0
+        self.upcomingCollectionView.alpha = 0
         self.view.addSubview(topCollectionView)
-        self.view.addSubview(bottomCollectionView)
         topCollectionView.register(.init(nibName: topCell, bundle: nil), forCellWithReuseIdentifier: topCell)
-        bottomCollectionView.register(.init(nibName: bottomCell, bundle: nil), forCellWithReuseIdentifier: bottomCell)
         MainVM.shared.delegate = self
         
         MainVM.shared.getTopRated{ errorMessage in
@@ -42,46 +40,48 @@ class MainVC: UIViewController {
                 print("error \(errorMessage)")
             }
         }
-        
-        MainVM.shared.getPopular{ errorMessage in
-            if let errorMessage = errorMessage {
-                print("error \(errorMessage)")
-            }
-        }
     }
 
-    @IBAction func segmentedControlTapped(_ sender: Any) {
+    @IBAction func segmentedControlTapped(_ sender: UISegmentedControl) {
         
+        if sender.selectedSegmentIndex == 0 {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.latestCollectionView.alpha = 1
+                self.popularCollectionView.alpha = 0
+                self.upcomingCollectionView.alpha = 0
+            })
+        } else  if sender.selectedSegmentIndex == 1 {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.latestCollectionView.alpha = 0
+                self.popularCollectionView.alpha = 1
+                self.upcomingCollectionView.alpha = 0
+            })
+        } else  {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.latestCollectionView.alpha = 0
+                self.popularCollectionView.alpha = 0
+                self.upcomingCollectionView.alpha = 1
+            })
+            
+        }
     }
 }
 
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.topCollectionView {
-            return MainVM.shared.topRated.count
-            }
-
-        return MainVM.shared.popular.count
+        
+        return MainVM.shared.topRated.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == self.topCollectionView {
-            
-            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: topCell, for: indexPath) as! TopCell
-            
-            let item = MainVM.shared.topRated[indexPath.item]
-            cellA.configureCell(item: item)
-            cellA.backgroundColor = UIColor.clear
-            return cellA
-        } else {
-            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: bottomCell, for: indexPath) as! BottomCell
         
-            let item = MainVM.shared.popular[indexPath.item]
-            cellB.configureCell(item: item)
-            cellB.backgroundColor = UIColor.clear
-            return cellB
-        }
+        let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: topCell, for: indexPath) as! TopCell
+        
+        let item = MainVM.shared.topRated[indexPath.item]
+        cellA.configureCell(item: item)
+        cellA.backgroundColor = UIColor.clear
+        return cellA
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -89,38 +89,19 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == self.topCollectionView {
-            return CGSize(width: collectionView.frame.width / 1.3 , height: collectionView.frame.height)
-        } else {
-            return CGSize(width: (collectionView.frame.width + 60 ) / 4 , height: (collectionView.frame.height + 40) / 2.5)
-        }
+        return CGSize(width: collectionView.frame.width / 1.3 , height: collectionView.frame.height)
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if scrollView == bottomCollectionView {
-            let offsetY = scrollView.contentOffset.y
-            let contentHeight = scrollView.contentSize.height
-            let height = scrollView.frame.size.height
-            
-            if offsetY >= contentHeight - (1.7 * height) {
-                
-                MainVM.shared.getPopular{ errorMessage in
-                    if let errorMessage = errorMessage {
-                        print("error \(errorMessage)")
-                    }
-                }
-            }
-        } else {
-            let offsetX = scrollView.contentOffset.x
-            let contentWidth = scrollView.contentSize.width
-            let width = scrollView.frame.size.width
-            
-            if offsetX >= contentWidth - (3 * width) {
-                print("topRated")
-                MainVM.shared.getTopRated{ errorMessage in
-                    if let errorMessage = errorMessage {
-                        print("error \(errorMessage)")
-                    }
+        
+        let offsetX = scrollView.contentOffset.x
+        let contentWidth = scrollView.contentSize.width
+        let width = scrollView.frame.size.width
+        
+        if offsetX >= contentWidth - (3 * width) {
+            MainVM.shared.getTopRated{ errorMessage in
+                if let errorMessage = errorMessage {
+                    print("error \(errorMessage)")
                 }
             }
         }
@@ -137,10 +118,7 @@ extension MainVC: MainVMDelegate {
     }
  
     func didGetPopular(isDone: Bool) {
-        if isDone {
-            DispatchQueue.main.async {
-                self.bottomCollectionView.reloadData()
-            }
-        }
+    }
+    func didGetLatest(isDone: Bool) {
     }
 }
