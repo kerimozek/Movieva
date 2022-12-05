@@ -23,11 +23,11 @@ class MainVM {
     private var page: Int = 1
 
     func getTopRated(complete: @escaping((String?)->())) {
-        TopRatedManager.shared.getTopRated(page: 1) { items, errorMessage in
+        TopRatedManager.shared.getTopRated(page: page) { items, errorMessage in
             
             if let items = items {
+                self.topRated.append(contentsOf: items.results!)
                 self.page += 1
-                self.topRated = items.results!
                 self.delegate?.didGetTopRated(isDone: true)
             }
             complete(errorMessage)

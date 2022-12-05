@@ -110,10 +110,21 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                     }
                 }
             }
+        } else {
+            let offsetX = scrollView.contentOffset.x
+            let contentWidth = scrollView.contentSize.width
+            let width = scrollView.frame.size.width
+            
+            if offsetX >= contentWidth - (3 * width) {
+                print("topRated")
+                MainVM.shared.getTopRated{ errorMessage in
+                    if let errorMessage = errorMessage {
+                        print("error \(errorMessage)")
+                    }
+                }
+            }
         }
-        
     }
-    
 }
 
 extension MainVC: MainVMDelegate {
