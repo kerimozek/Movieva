@@ -117,6 +117,21 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = self.searchTableView.contentSize.height-250
+        let height = scrollView.frame.size.height
+
+                if offsetY >= contentHeight - height {
+        
+                    SearchVM.shared.getMovies{ errorMessage in
+                        if let errorMessage = errorMessage {
+                            print("error \(errorMessage)")
+                        }
+                    }
+                }
+    }
 }
 
 
