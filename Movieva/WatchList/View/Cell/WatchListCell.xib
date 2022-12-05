@@ -26,38 +26,38 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="255" verticalCompressionResistancePriority="753" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rF-dZ-xBy">
-                                <rect key="frame" x="226" y="12" width="212" height="24"/>
+                                <rect key="frame" x="226" y="0.0" width="212" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.85490196080000003" green="0.84313725490000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="255" verticalCompressionResistancePriority="752" text="IMDB: 8.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ame-8s-Yev">
-                                <rect key="frame" x="226" y="48" width="212" height="19.5"/>
+                                <rect key="frame" x="226" y="36" width="212" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.85490196080000003" green="0.84313725490000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="Action" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ta8-wf-lum">
-                                <rect key="frame" x="226" y="75.5" width="42" height="17"/>
+                                <rect key="frame" x="226" y="63.5" width="42" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.85490196080000003" green="0.84313725490000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="138 Min." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAX-NC-Fux">
-                                <rect key="frame" x="281" y="75.5" width="55" height="17"/>
+                                <rect key="frame" x="281" y="63.5" width="55" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.85490196080000003" green="0.84313725490000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKV-bq-ZdX">
-                                <rect key="frame" x="268" y="75.5" width="5" height="17"/>
+                                <rect key="frame" x="268" y="63.5" width="5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEi-tg-LAU">
-                                <rect key="frame" x="226" y="94.5" width="212" height="185.5"/>
-                                <mutableString key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
+                                <rect key="frame" x="226" y="82.5" width="212" height="197.5"/>
+                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                             <constraint firstAttribute="trailing" secondItem="hEi-tg-LAU" secondAttribute="trailing" constant="12" id="AUi-uN-HL8"/>
                             <constraint firstItem="JoH-no-4ue" firstAttribute="leading" secondItem="Ypi-M3-efr" secondAttribute="leading" id="BxY-G5-aVf"/>
                             <constraint firstItem="JoH-no-4ue" firstAttribute="height" secondItem="Ypi-M3-efr" secondAttribute="height" id="E6i-bP-3Wu"/>
-                            <constraint firstItem="8rF-dZ-xBy" firstAttribute="top" secondItem="Ypi-M3-efr" secondAttribute="top" constant="12" id="UIv-vz-JE5"/>
+                            <constraint firstItem="8rF-dZ-xBy" firstAttribute="top" secondItem="Ypi-M3-efr" secondAttribute="top" id="UIv-vz-JE5"/>
                             <constraint firstItem="Ame-8s-Yev" firstAttribute="top" secondItem="8rF-dZ-xBy" secondAttribute="bottom" constant="12" id="Vlc-xq-nkw"/>
                             <constraint firstItem="8rF-dZ-xBy" firstAttribute="leading" secondItem="JoH-no-4ue" secondAttribute="trailing" constant="12" id="WbB-lB-U0c"/>
                             <constraint firstItem="dKV-bq-ZdX" firstAttribute="top" secondItem="Ame-8s-Yev" secondAttribute="bottom" constant="8" id="YJT-rp-RYz"/>

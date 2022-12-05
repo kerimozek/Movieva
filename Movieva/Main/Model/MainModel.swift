@@ -33,6 +33,18 @@ struct Popular: Codable {
     }
 }
 
+struct Latest: Codable {
+    let page: Int?
+    let results: [ResultMovie]?
+    let totalPages, totalResults: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case page, results
+        case totalPages
+        case totalResults
+    }
+}
+
 // MARK: - Result
 struct ResultMovie: Codable, BaseModel {
     var adult: Bool?

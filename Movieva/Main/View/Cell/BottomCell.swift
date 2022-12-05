@@ -16,7 +16,7 @@ class BottomCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        bottomCellView.backgroundColor = UIColor(red: 0.85, green: 0.20, blue: 0.31, alpha: 1.00)
+        bottomCellView.backgroundColor = UIColor(red: 0.08, green: 0.06, blue: 0.22, alpha: 1.00)
         bottomCellView.layer.cornerRadius = 10
         bottomCellView.layer.shadowColor = UIColor.darkGray.cgColor
         bottomCellView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
