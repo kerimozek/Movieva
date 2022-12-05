@@ -79,10 +79,4 @@ extension UpcomingVC: MainVMDelegate {
             }
         }
     }
-    
-    func didGetPopular(isDone: Bool) {
-    }
-    
-    func didGetTopRated(isDone: Bool) {
-    }
 }

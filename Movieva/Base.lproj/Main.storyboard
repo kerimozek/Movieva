@@ -534,6 +534,7 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ztY-zt-fCg"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AhR-j8-9La" firstAttribute="leading" secondItem="m0X-kJ-gM2" secondAttribute="leadingMargin" id="agy-uY-hda"/>
@@ -570,6 +571,7 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="S1X-Nh-HyA"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="z42-a8-GGb" secondAttribute="bottom" id="C1N-mt-sWb"/>
@@ -606,6 +608,7 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="EUd-mT-eP3"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="MSq-gA-Zcw" secondAttribute="bottom" id="G4B-9L-Tpx"/>

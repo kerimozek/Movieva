@@ -80,10 +80,4 @@ extension PopularVC: MainVMDelegate {
             }
         }
     }
-    
-    func didGetTopRated(isDone: Bool) {
-    }
-    
-    func didGetLatest(isDone: Bool) {
-    }
 }

@@ -43,7 +43,6 @@ class MainVC: UIViewController {
     }
 
     @IBAction func segmentedControlTapped(_ sender: UISegmentedControl) {
-        
         if sender.selectedSegmentIndex == 0 {
             UIView.animate(withDuration: 0.3, animations: {
                 self.latestCollectionView.alpha = 1

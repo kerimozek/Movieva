@@ -80,10 +80,4 @@ extension LatestVC: MainVMDelegate {
             }
         }
     }
-    
-    func didGetPopular(isDone: Bool) {
-    }
-    
-    func didGetLatest(isDone: Bool) {
-    }
 }

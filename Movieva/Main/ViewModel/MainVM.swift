@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol MainVMDelegate: AnyObject {
-    func didGetTopRated(isDone: Bool)
-    func didGetPopular(isDone: Bool)
-    func didGetLatest(isDone: Bool)
+@objc protocol MainVMDelegate: AnyObject {
+    @objc optional func didGetTopRated(isDone: Bool)
+    @objc optional func didGetPopular(isDone: Bool)
+    @objc optional func didGetLatest(isDone: Bool)
 }
 
 class MainVM {
@@ -30,10 +30,10 @@ class MainVM {
             if let items = items {
                 self.topRated.append(contentsOf: items.results!)
                 self.page += 1
-                self.delegate?.didGetTopRated(isDone: true)
+                self.delegate?.didGetTopRated!(isDone: true)
             }
             complete(errorMessage)
-            self.delegate?.didGetTopRated(isDone: false)
+            self.delegate?.didGetTopRated!(isDone: false)
         }
     }
     
@@ -43,10 +43,10 @@ class MainVM {
             if let items = items {
                 self.popular.append(contentsOf: items.results!)
                 self.page += 1
-                self.delegate?.didGetPopular(isDone: true)
+                self.delegate?.didGetPopular!(isDone: true)
             }
             complete(errorMessage)
-            self.delegate?.didGetPopular(isDone: false)
+            self.delegate?.didGetPopular!(isDone: false)
         }
     }
     
@@ -56,10 +56,10 @@ class MainVM {
             if let items = items {
                 self.latest.append(contentsOf: items.results!)
                 self.page += 1
-                self.delegate?.didGetLatest(isDone: true)
+                self.delegate?.didGetLatest!(isDone: true)
             }
             complete(errorMessage)
-            self.delegate?.didGetPopular(isDone: false)
+            self.delegate?.didGetPopular!(isDone: false)
         }
     }
 }
