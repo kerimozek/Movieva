@@ -38,19 +38,19 @@ class DetailVC: UIViewController {
 
     @IBAction func changeContainer(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                         self.containerViewAbout.alpha = 1
                         self.containerViewReviews.alpha = 0
                         self.containerViewCast.alpha = 0
                     })
         } else  if sender.selectedSegmentIndex == 1 {
-                    UIView.animate(withDuration: 0.5, animations: {
+                    UIView.animate(withDuration: 0.3, animations: {
                         self.containerViewAbout.alpha = 0
                         self.containerViewReviews.alpha = 1
                         self.containerViewCast.alpha = 0
                     })
                 } else  {
-                    UIView.animate(withDuration: 0.5, animations: {
+                    UIView.animate(withDuration: 0.3, animations: {
                         self.containerViewAbout.alpha = 0
                         self.containerViewReviews.alpha = 0
                         self.containerViewCast.alpha = 1
