@@ -36,4 +36,8 @@ enum APIURLs {
     static func topRatedMovies(page: Int) -> String {
     "https://api.themoviedb.org/3/movie/top_rated?api_key=fd24fe5ba58021d3f54a2a7c04297951&language=en-US&page=\(page)"
     }
+    
+    static func latestMovies(page: Int) -> String {
+      "https://api.themoviedb.org/3/movie/now_playing?api_key=fd24fe5ba58021d3f54a2a7c04297951&language=en-US&page=\(page)"
+    }
 }
