@@ -82,7 +82,11 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("clicked")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+        vc.detail = MainVM.shared.topRated[indexPath.row]
+        ReviewVM.movieID = MainVM.shared.topRated[indexPath.row].id
+        ContainerViewAbout.detailAbout = MainVM.shared.topRated[indexPath.row].overview
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
