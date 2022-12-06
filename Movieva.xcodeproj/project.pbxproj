@@ -177,6 +177,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6E0F335B293FA5D5000E1945 /* Upcoming */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Upcoming;
+			sourceTree = "<group>";
+		};
 		6EFE994B2936814D009D3569 = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +342,7 @@
 		6EFE999D29377771009D3569 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				6E0F335B293FA5D5000E1945 /* Upcoming */,
 				6E0F334F293E71B2000E1945 /* Latest */,
 				6EFE99A6293787EB009D3569 /* Popular */,
 				6EFE99A3293780E9009D3569 /* TopRated */,

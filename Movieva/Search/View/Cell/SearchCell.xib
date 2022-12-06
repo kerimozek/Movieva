@@ -49,7 +49,7 @@
                                         </constraints>
                                         <color key="tintColor" red="0.85490196080000003" green="0.84313725490000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="calendar" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="network" catalog="system"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsj-Ea-o0z">
                                         <rect key="frame" x="0.0" y="60" width="26" height="24"/>
@@ -59,7 +59,7 @@
                                         </constraints>
                                         <color key="tintColor" red="0.85490196080000003" green="0.84313725490000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="clock" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="calendar" catalog="system"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -127,7 +127,7 @@
     </objects>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="network" catalog="system" width="128" height="121"/>
         <image name="ticket" catalog="system" width="128" height="84"/>
     </resources>
 </document>
