@@ -23,7 +23,8 @@ class PopularVC: UIViewController {
         popularCollectionView.delegate = self
         popularCollectionView.dataSource = self
         popularCollectionView.register(.init(nibName: bottomCell, bundle: nil), forCellWithReuseIdentifier: bottomCell)
-        MainVM.shared.getPopular{ errorMessage in
+        PopularVM.shared.delegate = self
+        PopularVM.shared.getPopular{ errorMessage in
             if let errorMessage = errorMessage {
                 print("error \(errorMessage)")
             }
@@ -34,12 +35,12 @@ class PopularVC: UIViewController {
 
 extension PopularVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MainVM.shared.popular.count
+        return PopularVM.shared.popular.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: bottomCell, for: indexPath) as! BottomCell
-        let item = MainVM.shared.popular[indexPath.row]
+        let item = PopularVM.shared.popular[indexPath.row]
         cell.configureCell(item: item)
         cell.backgroundColor = UIColor.clear
         return cell
@@ -60,7 +61,7 @@ extension PopularVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         let height = scrollView.frame.size.height
         
         if offsetY >= contentHeight - (4 * height) {
-            MainVM.shared.getPopular{ errorMessage in
+            PopularVM.shared.getPopular{ errorMessage in
                 if let errorMessage = errorMessage {
                     print("error \(errorMessage)")
                 }
@@ -72,7 +73,7 @@ extension PopularVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
 }
 
-extension PopularVC: MainVMDelegate {
+extension PopularVC: PopularDelegate {
     func didGetPopular(isDone: Bool) {
         if isDone {
             DispatchQueue.main.async {
