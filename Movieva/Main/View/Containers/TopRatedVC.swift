@@ -7,10 +7,10 @@
 
 import UIKit
 
-class UpcomingVC: UIViewController {
+class TopRatedVC: UIViewController {
     
     
-    @IBOutlet weak var upcomingCollectionView: UICollectionView!
+    @IBOutlet weak var topRatedCollectionView: UICollectionView!
     let bottomCell = "BottomCell"
     
     override func viewDidLoad() {
@@ -19,10 +19,11 @@ class UpcomingVC: UIViewController {
     }
     
     private func setupUI() {
-        upcomingCollectionView.delegate = self
-        upcomingCollectionView.dataSource = self
-        upcomingCollectionView.register(.init(nibName: bottomCell, bundle: nil), forCellWithReuseIdentifier: bottomCell)
-        MainVM.shared.getLatest{ errorMessage in
+        topRatedCollectionView.delegate = self
+        topRatedCollectionView.dataSource = self
+        topRatedCollectionView.register(.init(nibName: bottomCell, bundle: nil), forCellWithReuseIdentifier: bottomCell)
+        TopRatedVM.shared.delegate = self
+        TopRatedVM.shared.getTopRated{ errorMessage in
             if let errorMessage = errorMessage {
                 print("error \(errorMessage)")
             }
@@ -30,14 +31,14 @@ class UpcomingVC: UIViewController {
     }
 }
 
-extension UpcomingVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension TopRatedVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MainVM.shared.latest.count
+        return TopRatedVM.shared.topRated.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: bottomCell, for: indexPath) as! BottomCell
-        let item = MainVM.shared.latest[indexPath.row]
+        let item = TopRatedVM.shared.topRated[indexPath.row]
         cell.configureCell(item: item)
         cell.backgroundColor = UIColor.clear
         return cell
@@ -59,23 +60,23 @@ extension UpcomingVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         
         if offsetY >= contentHeight - (4 * height) {
             
-            MainVM.shared.getLatest{ errorMessage in
+            TopRatedVM.shared.getTopRated{ errorMessage in
                 if let errorMessage = errorMessage {
                     print("error \(errorMessage)")
                 }
             }
             DispatchQueue.main.async {
-                self.upcomingCollectionView.reloadData()
+                self.topRatedCollectionView.reloadData()
             }
         }
     }
 }
 
-extension UpcomingVC: MainVMDelegate {
-    func didGetLatest(isDone: Bool) {
+extension TopRatedVC: TopRatedDelegate {
+    func didGetTopRated(isDone: Bool) {
         if isDone {
             DispatchQueue.main.async {
-                self.upcomingCollectionView.reloadData()
+                self.topRatedCollectionView.reloadData()
             }
         }
     }
