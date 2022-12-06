@@ -11,38 +11,56 @@ class ContainerViewReviews: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let reviewCell = "ReviewCell"
+    static var detailReview: BaseModel?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
-        
     }
-    
-    
+
     private func setupUI() {
-    tableView.delegate = self
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(.init(nibName: reviewCell, bundle: nil), forCellReuseIdentifier: reviewCell)
+        tableView.rowHeight  = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+        ReviewVM.shared.delegate = self
+        ReviewVM.shared.getReviews{ errorMessage in
+            if let errorMessage = errorMessage {
+                print("error \(errorMessage)")
+            }
+        }
     }
 }
 
 extension ContainerViewReviews: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return ReviewVM.shared.reviews.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reviewCell, for: indexPath) as! ReviewCell
-        cell.reviewTitle.text = "Spiderman"
-        cell.reviewImageView.image = UIImage(named: "spiderman")
-        cell.backgroundColor = UIColor.clear
+        let item = ReviewVM.shared.reviews[indexPath.row]
+        cell.configureCell(item: item)
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.clear
+        cell.selectedBackgroundView = backgroundView
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped")
+        print("tapped review")
+    }
+}
+
+extension ContainerViewReviews: ReviewDelegate {
+    func didGetReviews(isDone: Bool) {
+        if isDone {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }

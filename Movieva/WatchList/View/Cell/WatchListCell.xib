@@ -43,18 +43,6 @@
                                 <color key="textColor" red="0.85490196080000003" green="0.84313725490000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="138 Min." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAX-NC-Fux">
-                                <rect key="frame" x="281" y="63.5" width="55" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.85490196080000003" green="0.84313725490000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKV-bq-ZdX">
-                                <rect key="frame" x="268" y="63.5" width="5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEi-tg-LAU">
                                 <rect key="frame" x="226" y="82.5" width="212" height="197.5"/>
                                 <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
@@ -74,14 +62,10 @@
                             <constraint firstItem="8rF-dZ-xBy" firstAttribute="top" secondItem="Ypi-M3-efr" secondAttribute="top" id="UIv-vz-JE5"/>
                             <constraint firstItem="Ame-8s-Yev" firstAttribute="top" secondItem="8rF-dZ-xBy" secondAttribute="bottom" constant="12" id="Vlc-xq-nkw"/>
                             <constraint firstItem="8rF-dZ-xBy" firstAttribute="leading" secondItem="JoH-no-4ue" secondAttribute="trailing" constant="12" id="WbB-lB-U0c"/>
-                            <constraint firstItem="dKV-bq-ZdX" firstAttribute="top" secondItem="Ame-8s-Yev" secondAttribute="bottom" constant="8" id="YJT-rp-RYz"/>
                             <constraint firstAttribute="bottom" secondItem="JoH-no-4ue" secondAttribute="bottom" id="bUK-Mg-6Vs"/>
                             <constraint firstAttribute="trailing" secondItem="Ame-8s-Yev" secondAttribute="trailing" constant="12" id="cwY-WN-PNx"/>
                             <constraint firstItem="hEi-tg-LAU" firstAttribute="leading" secondItem="JoH-no-4ue" secondAttribute="trailing" constant="12" id="eEO-Cl-K7T"/>
-                            <constraint firstItem="dAX-NC-Fux" firstAttribute="leading" secondItem="dKV-bq-ZdX" secondAttribute="trailing" constant="8" id="ft4-xt-Twg"/>
-                            <constraint firstItem="dKV-bq-ZdX" firstAttribute="leading" secondItem="Ta8-wf-lum" secondAttribute="trailing" id="gEO-Er-Ygv"/>
                             <constraint firstAttribute="height" constant="280" id="gH3-rR-hh8"/>
-                            <constraint firstItem="dAX-NC-Fux" firstAttribute="top" secondItem="Ame-8s-Yev" secondAttribute="bottom" constant="8" id="hk4-sc-K3F"/>
                             <constraint firstAttribute="bottom" secondItem="hEi-tg-LAU" secondAttribute="bottom" id="lgy-nW-VZM"/>
                             <constraint firstItem="hEi-tg-LAU" firstAttribute="top" secondItem="Ta8-wf-lum" secondAttribute="bottom" constant="2" id="r6u-Oj-mND"/>
                             <constraint firstAttribute="trailing" secondItem="8rF-dZ-xBy" secondAttribute="trailing" constant="12" id="vsB-Yz-iIk"/>
@@ -103,7 +87,6 @@
                 <outlet property="detailLabel" destination="hEi-tg-LAU" id="XIz-In-LCD"/>
                 <outlet property="genreLabel" destination="Ta8-wf-lum" id="K5h-JQ-rza"/>
                 <outlet property="imdbLabel" destination="Ame-8s-Yev" id="VZc-eV-41c"/>
-                <outlet property="movieMinutes" destination="dAX-NC-Fux" id="9Hn-gn-wr3"/>
                 <outlet property="movieTitle" destination="8rF-dZ-xBy" id="5Bl-wN-1hy"/>
                 <outlet property="watchListCellView" destination="Ypi-M3-efr" id="9FK-TW-cLl"/>
                 <outlet property="watchListImageView" destination="JoH-no-4ue" id="h2s-T1-sPQ"/>

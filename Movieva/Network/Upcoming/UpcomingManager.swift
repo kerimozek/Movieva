@@ -1,25 +1,21 @@
 //
-//  TopRatedManager.swift
+//  UpcomingManager.swift
 //  Movieva
 //
-//  Created by Mehmet Kerim ÖZEK on 30.11.2022.
+//  Created by Mehmet Kerim ÖZEK on 6.12.2022.
 //
 
 import Foundation
 
-class TopRatedManager {
+class UpcomingManager {
     
-    static let shared = TopRatedManager()
+    static let shared = UpcomingManager()
     
-    // MARK: - TOP RATED API https://api.themoviedb.org/3/movie/top_rated?api_key=fd24fe5ba58021d3f54a2a7c04297951&language=en-US&page=1 -
+    // MARK: - UPCOMING API https://api.themoviedb.org/3/movie/upcoming?api_key=fd24fe5ba58021d3f54a2a7c04297951&language=en-US&page=1 -
     
-    
-    
-
-    
-    func getTopRated(page: Int, complete: @escaping((Movie?, String?)->())) {
+    func getUpcoming(page: Int, complete: @escaping((Movie?, String?)->())) {
         
-        let url = APIURLs.topRatedMovies(page: page)
+        let url = APIURLs.upcomingMovies(page: page)
         
         NetworkManager.shared.request(type: Movie.self,
                                       url: url,

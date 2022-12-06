@@ -12,11 +12,10 @@ class WatchListVC: UIViewController {
     
     @IBOutlet weak var watchListTableView: UITableView!
     let watchListCell = "WatchListCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
-        
     }
     
 

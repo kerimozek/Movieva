@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SearchViewModelDelegate: AnyObject {
-    func didGetMovies(isDone: Bool)
+    func didGetUpcoming(isDone: Bool)
 }
 
 
@@ -21,18 +21,17 @@ class SearchVM {
     
     var searchMovie: [ResultMovie] = []
 
-    func getMovies(complete: @escaping((String?)->())) {
-        PopularManager.shared.getPopular(page: page) { [self] items, errorMessage in
+    func getUpcoming(complete: @escaping((String?)->())) {
+        UpcomingManager.shared.getUpcoming(page: page) { [self] items, errorMessage in
             
             if let items = items {
                 self.searchMovie.append(contentsOf: items.results!)
                 self.page += 1
-                self.delegate?.didGetMovies(isDone: true)
+                self.delegate?.didGetUpcoming(isDone: true)
             }
             complete(errorMessage)
-            self.delegate?.didGetMovies(isDone: false)
+            self.delegate?.didGetUpcoming(isDone: false)
         }
     }
-    
 }
 

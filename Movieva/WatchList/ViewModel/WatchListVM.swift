@@ -33,5 +33,4 @@ class WatchListVM {
             self.delegate?.didGetMovies(isDone: false)
         }
     }
-    
 }

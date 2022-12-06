@@ -10,14 +10,11 @@ import UIKit
 class ContainerViewAbout: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
+    static var detailAbout: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         textView.isEditable = false
+        textView.text = ContainerViewAbout.detailAbout
     }
-    
-
-    
-
 }

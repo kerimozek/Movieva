@@ -47,7 +47,11 @@ extension PopularVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tapped")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+        vc.detail = PopularVM.shared.popular[indexPath.row]
+        ReviewVM.movieID = PopularVM.shared.popular[indexPath.row].id
+        ContainerViewAbout.detailAbout = PopularVM.shared.popular[indexPath.row].overview
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

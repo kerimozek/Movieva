@@ -29,12 +29,7 @@ class BottomCell: UICollectionViewCell {
     }
     
     func configureCell(item: ResultMovie) {
-        let image2 = "https://www.ubuy.com.tr/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjEzUUdKWkl4SkwuX0FDX1NMMTUwMF8uanBn.jpg"
-        if item.poster_path != nil {
-            let image = NetworkHelper.shared.baseImageUrl + item.poster_path!
-            self.bottomCellImageView.kf.setImage(with: URL(string: image))
-        } else {
-            self.bottomCellImageView.kf.setImage(with: URL(string: image2))
-        }
+        let image = NetworkHelper.shared.baseImageUrl + item.poster_path!
+        self.bottomCellImageView.kf.setImage(with: URL(string: image))
     }
 }
