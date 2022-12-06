@@ -13,11 +13,11 @@ class LatestManager {
     
     // MARK: - LATEST https://api.themoviedb.org/3/movie/now_playing?api_key=fd24fe5ba58021d3f54a2a7c04297951&language=en-US&page=1 -
     
-    func getLatest(page: Int, complete: @escaping((Latest?, String?)->())) {
+    func getLatest(page: Int, complete: @escaping((Movie?, String?)->())) {
         
         let url = APIURLs.latestMovies(page: page)
         
-        NetworkManager.shared.request(type: Latest.self,
+        NetworkManager.shared.request(type: Movie.self,
                                       url: url,
                                       method: .get) { response in
             switch response {
