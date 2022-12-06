@@ -34,7 +34,6 @@ class MainVC: UIViewController {
         self.view.addSubview(topCollectionView)
         topCollectionView.register(.init(nibName: topCell, bundle: nil), forCellWithReuseIdentifier: topCell)
         MainVM.shared.delegate = self
-        
         MainVM.shared.getTopRated{ errorMessage in
             if let errorMessage = errorMessage {
                 print("error \(errorMessage)")
@@ -69,7 +68,6 @@ class MainVC: UIViewController {
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return MainVM.shared.topRated.count
     }
     
@@ -114,10 +112,5 @@ extension MainVC: MainVMDelegate {
                 self.topCollectionView.reloadData()
             }
         }
-    }
- 
-    func didGetPopular(isDone: Bool) {
-    }
-    func didGetLatest(isDone: Bool) {
     }
 }

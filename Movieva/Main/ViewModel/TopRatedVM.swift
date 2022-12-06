@@ -1,25 +1,26 @@
 //
-//  MainViewModel.swift
+//  TopRatedVM.swift
 //  Movieva
 //
-//  Created by Mehmet Kerim ÖZEK on 30.11.2022.
+//  Created by Mehmet Kerim ÖZEK on 6.12.2022.
 //
 
 import Foundation
 
-protocol MainVMDelegate: AnyObject {
+protocol TopRatedDelegate: AnyObject {
     func didGetTopRated(isDone: Bool)
 }
 
-class MainVM {
+class TopRatedVM {
     
-    weak var delegate: MainVMDelegate?
-    static let shared = MainVM()
+    weak var delegate: TopRatedDelegate?
+    static let shared = TopRatedVM()
     private init () { }
     
     var topRated: [ResultMovie] = []
+    
     private var page: Int = 1
-
+    
     func getTopRated(complete: @escaping((String?)->())) {
         TopRatedManager.shared.getTopRated(page: page) { items, errorMessage in
             
@@ -33,4 +34,3 @@ class MainVM {
         }
     }
 }
-

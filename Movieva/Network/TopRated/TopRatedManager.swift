@@ -17,11 +17,11 @@ class TopRatedManager {
     
 
     
-    func getTopRated(page: Int, complete: @escaping((TopRated?, String?)->())) {
+    func getTopRated(page: Int, complete: @escaping((Movie?, String?)->())) {
         
         let url = APIURLs.topRatedMovies(page: page)
         
-        NetworkManager.shared.request(type: TopRated.self,
+        NetworkManager.shared.request(type: Movie.self,
                                       url: url,
                                       method: .get) { response in
             switch response {
