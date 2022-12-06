@@ -15,10 +15,13 @@
 		6E0F3343293A0AE3000E1945 /* CastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F3341293A0AE3000E1945 /* CastCell.swift */; };
 		6E0F3344293A0AE3000E1945 /* CastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E0F3342293A0AE3000E1945 /* CastCell.xib */; };
 		6E0F3347293A5A19000E1945 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F3346293A5A19000E1945 /* DetailModel.swift */; };
-		6E0F334A293E63EF000E1945 /* UpcomingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F3349293E63EF000E1945 /* UpcomingVC.swift */; };
+		6E0F334A293E63EF000E1945 /* TopRatedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F3349293E63EF000E1945 /* TopRatedVC.swift */; };
 		6E0F334C293E6400000E1945 /* PopularVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F334B293E6400000E1945 /* PopularVC.swift */; };
 		6E0F334E293E6442000E1945 /* LatestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F334D293E6442000E1945 /* LatestVC.swift */; };
 		6E0F3351293E71BE000E1945 /* LatestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F3350293E71BE000E1945 /* LatestManager.swift */; };
+		6E0F3353293F47E3000E1945 /* TopRatedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F3352293F47E3000E1945 /* TopRatedVM.swift */; };
+		6E0F3355293F47EC000E1945 /* PopularVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F3354293F47EC000E1945 /* PopularVM.swift */; };
+		6E0F3357293F47F3000E1945 /* LatestVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F3356293F47F3000E1945 /* LatestVM.swift */; };
 		6EFE99582936814D009D3569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE99572936814D009D3569 /* AppDelegate.swift */; };
 		6EFE995A2936814D009D3569 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE99592936814D009D3569 /* SceneDelegate.swift */; };
 		6EFE995C2936814D009D3569 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE995B2936814D009D3569 /* MainVC.swift */; };
@@ -58,10 +61,13 @@
 		6E0F3341293A0AE3000E1945 /* CastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCell.swift; sourceTree = "<group>"; };
 		6E0F3342293A0AE3000E1945 /* CastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCell.xib; sourceTree = "<group>"; };
 		6E0F3346293A5A19000E1945 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
-		6E0F3349293E63EF000E1945 /* UpcomingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingVC.swift; sourceTree = "<group>"; };
+		6E0F3349293E63EF000E1945 /* TopRatedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedVC.swift; sourceTree = "<group>"; };
 		6E0F334B293E6400000E1945 /* PopularVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularVC.swift; sourceTree = "<group>"; };
 		6E0F334D293E6442000E1945 /* LatestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestVC.swift; sourceTree = "<group>"; };
 		6E0F3350293E71BE000E1945 /* LatestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestManager.swift; sourceTree = "<group>"; };
+		6E0F3352293F47E3000E1945 /* TopRatedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedVM.swift; sourceTree = "<group>"; };
+		6E0F3354293F47EC000E1945 /* PopularVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularVM.swift; sourceTree = "<group>"; };
+		6E0F3356293F47F3000E1945 /* LatestVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestVM.swift; sourceTree = "<group>"; };
 		6EFE99542936814D009D3569 /* Movieva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movieva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EFE99572936814D009D3569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EFE99592936814D009D3569 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,7 +152,7 @@
 		6E0F3348293E63BD000E1945 /* Containers */ = {
 			isa = PBXGroup;
 			children = (
-				6E0F3349293E63EF000E1945 /* UpcomingVC.swift */,
+				6E0F3349293E63EF000E1945 /* TopRatedVC.swift */,
 				6E0F334B293E6400000E1945 /* PopularVC.swift */,
 				6E0F334D293E6442000E1945 /* LatestVC.swift */,
 			);
@@ -275,6 +281,9 @@
 			isa = PBXGroup;
 			children = (
 				6EFE998929376BC0009D3569 /* MainVM.swift */,
+				6E0F3352293F47E3000E1945 /* TopRatedVM.swift */,
+				6E0F3354293F47EC000E1945 /* PopularVM.swift */,
+				6E0F3356293F47F3000E1945 /* LatestVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -465,8 +474,10 @@
 				6E0F3343293A0AE3000E1945 /* CastCell.swift in Sources */,
 				6EFE997129376ACC009D3569 /* SearchVC.swift in Sources */,
 				6EFE996C2936A550009D3569 /* DetailVC.swift in Sources */,
+				6E0F3357293F47F3000E1945 /* LatestVM.swift in Sources */,
 				6EFE998A29376BC0009D3569 /* MainVM.swift in Sources */,
-				6E0F334A293E63EF000E1945 /* UpcomingVC.swift in Sources */,
+				6E0F334A293E63EF000E1945 /* TopRatedVC.swift in Sources */,
+				6E0F3355293F47EC000E1945 /* PopularVM.swift in Sources */,
 				6EFE998829376BB8009D3569 /* MainModel.swift in Sources */,
 				6E0F3347293A5A19000E1945 /* DetailModel.swift in Sources */,
 				6E0F333E293A0746000E1945 /* ReviewCell.swift in Sources */,
@@ -475,6 +486,7 @@
 				6EFE999F2937777C009D3569 /* NetworkManager.swift in Sources */,
 				6EFE99582936814D009D3569 /* AppDelegate.swift in Sources */,
 				6EFE999329376CED009D3569 /* WatchListCell.swift in Sources */,
+				6E0F3353293F47E3000E1945 /* TopRatedVM.swift in Sources */,
 				6E0F334C293E6400000E1945 /* PopularVC.swift in Sources */,
 				6EFE999A29376D2E009D3569 /* WatchListModel.swift in Sources */,
 				6E0F3338293A04A3000E1945 /* ContainerViewReviews.swift in Sources */,

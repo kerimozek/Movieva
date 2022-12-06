@@ -23,7 +23,8 @@ class LatestVC: UIViewController {
         latestCollectionView.delegate = self
         latestCollectionView.dataSource = self
         latestCollectionView.register(.init(nibName: bottomCell, bundle: nil), forCellWithReuseIdentifier: bottomCell)
-        MainVM.shared.getTopRated{ errorMessage in
+        LatestVM.shared.delegate = self
+        LatestVM.shared.getLatest{ errorMessage in
             if let errorMessage = errorMessage {
                 print("error \(errorMessage)")
             }
@@ -33,12 +34,12 @@ class LatestVC: UIViewController {
 
 extension LatestVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MainVM.shared.topRated.count
+        return LatestVM.shared.latest.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: bottomCell, for: indexPath) as! BottomCell
-        let item = MainVM.shared.topRated[indexPath.row]
+        let item = LatestVM.shared.latest[indexPath.row]
         cell.configureCell(item: item)
         cell.backgroundColor = UIColor.clear
         return cell
@@ -60,7 +61,7 @@ extension LatestVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         
         if offsetY >= contentHeight - (4 * height) {
             
-            MainVM.shared.getTopRated{ errorMessage in
+            LatestVM.shared.getLatest{ errorMessage in
                 if let errorMessage = errorMessage {
                     print("error \(errorMessage)")
                 }
@@ -72,8 +73,8 @@ extension LatestVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     }
 }
 
-extension LatestVC: MainVMDelegate {
-    func didGetTopRated(isDone: Bool) {
+extension LatestVC: LatestDelegate {
+    func didGetLatest(isDone: Bool) {
         if isDone {
             DispatchQueue.main.async {
                 self.latestCollectionView.reloadData()

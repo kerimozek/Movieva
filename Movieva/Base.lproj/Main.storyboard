@@ -39,7 +39,7 @@
                                 <segments>
                                     <segment title="Latest"/>
                                     <segment title="Popular"/>
-                                    <segment title="Upcoming"/>
+                                    <segment title="Top-Rated"/>
                                 </segments>
                                 <color key="tintColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="selectedSegmentTintColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -588,10 +588,10 @@
             </objects>
             <point key="canvasLocation" x="2412" y="-871"/>
         </scene>
-        <!--UpcomingVC-->
+        <!--Top RatedVC-->
         <scene sceneID="nDS-IK-dff">
             <objects>
-                <viewController storyboardIdentifier="UpcomingVC" id="ZbB-7Z-a7k" customClass="UpcomingVC" customModule="Movieva" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpcomingVC" id="ZbB-7Z-a7k" customClass="TopRatedVC" customModule="Movieva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ob-3k-YbN">
                         <rect key="frame" x="0.0" y="0.0" width="382" height="386"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -618,7 +618,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="upcomingCollectionView" destination="MSq-gA-Zcw" id="JyP-3i-5fU"/>
+                        <outlet property="topRatedCollectionView" destination="MSq-gA-Zcw" id="JyP-3i-5fU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBA-36-ToK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
