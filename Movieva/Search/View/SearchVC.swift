@@ -26,7 +26,7 @@ class SearchVC: UIViewController {
         searchTableView.register(.init(nibName: searchCell, bundle: nil), forCellReuseIdentifier: searchCell)
         SearchVM.shared.delegate = self
         
-        SearchVM.shared.getMovies{ errorMessage in
+        SearchVM.shared.getUpcoming{ errorMessage in
             if let errorMessage = errorMessage {
                 print("error \(errorMessage)")
             }
@@ -113,7 +113,9 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-        //   vc.detail = SearchVM.shared.searchMovie[indexPath.row]
+        vc.detail = SearchVM.shared.searchMovie[indexPath.row]
+        ReviewVM.movieID = SearchVM.shared.searchMovie[indexPath.row].id
+        ContainerViewAbout.detailAbout = SearchVM.shared.searchMovie[indexPath.row].overview
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -125,7 +127,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
 
                 if offsetY >= contentHeight - height {
         
-                    SearchVM.shared.getMovies{ errorMessage in
+                    SearchVM.shared.getUpcoming{ errorMessage in
                         if let errorMessage = errorMessage {
                             print("error \(errorMessage)")
                         }
@@ -136,7 +138,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
 
 
 extension SearchVC: SearchViewModelDelegate {
-    func didGetMovies(isDone: Bool) {
+    func didGetUpcoming(isDone: Bool) {
         if isDone {
             DispatchQueue.main.async {
                 self.searchTableView.reloadData()
