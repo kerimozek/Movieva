@@ -1,8 +1,9 @@
 # Movieva
 
-<img src="https://github.com/kerimozek/Movieva/blob/main/Movieva/app%20images/movieva%20app.png" width="100">
-<img src="https://github.com/kerimozek/Movieva/blob/main/Movieva/app%20images/movieva%20app%202.png" width="100">
-
+<p float="left">
+<img src="https://github.com/kerimozek/Movieva/blob/main/Movieva/app%20images/movieva%20app.png" width=50%>
+<img src="https://github.com/kerimozek/Movieva/blob/main/Movieva/app%20images/movieva%20app%202.png" width=50%>
+</p>
 
 ## Description
 
