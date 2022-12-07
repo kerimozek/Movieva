@@ -207,13 +207,39 @@
                                             <constraint firstItem="akJ-dZ-PYu" firstAttribute="top" secondItem="ENX-oD-0z8" secondAttribute="top" id="lNm-lR-7Z2"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWu-d2-vGa">
+                                        <rect key="frame" x="342" y="16" width="56" height="67"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phv-5T-off">
+                                                <rect key="frame" x="0.0" y="0.0" width="56" height="67"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="bookmark.fill" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="saveButtonTapped:" destination="LAq-yH-E8D" eventType="touchUpInside" id="513-mi-vhP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="1Gn-bh-dTs"/>
+                                            <constraint firstAttribute="trailing" secondItem="Phv-5T-off" secondAttribute="trailing" id="Qph-3x-CXW"/>
+                                            <constraint firstItem="Phv-5T-off" firstAttribute="top" secondItem="lWu-d2-vGa" secondAttribute="top" id="T3u-El-en3"/>
+                                            <constraint firstAttribute="height" constant="67" id="fWe-Wp-crH"/>
+                                            <constraint firstItem="Phv-5T-off" firstAttribute="leading" secondItem="lWu-d2-vGa" secondAttribute="leading" id="gce-Wg-uqM"/>
+                                            <constraint firstAttribute="bottom" secondItem="Phv-5T-off" secondAttribute="bottom" id="rQt-0B-UhN"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="whm-TW-zJg" firstAttribute="top" secondItem="VLg-kC-eSv" secondAttribute="top" id="BXc-Qk-SrF"/>
                                     <constraint firstItem="ENX-oD-0z8" firstAttribute="top" secondItem="VLg-kC-eSv" secondAttribute="top" constant="16" id="BqZ-Bo-G38"/>
+                                    <constraint firstItem="lWu-d2-vGa" firstAttribute="top" secondItem="VLg-kC-eSv" secondAttribute="top" constant="16" id="Hyx-au-hxq"/>
                                     <constraint firstAttribute="trailing" secondItem="whm-TW-zJg" secondAttribute="trailing" id="QHV-C2-16Y"/>
                                     <constraint firstItem="whm-TW-zJg" firstAttribute="leading" secondItem="VLg-kC-eSv" secondAttribute="leading" id="Uod-ht-b9T"/>
+                                    <constraint firstAttribute="trailing" secondItem="lWu-d2-vGa" secondAttribute="trailing" constant="16" id="dqQ-nh-VEk"/>
                                     <constraint firstItem="ENX-oD-0z8" firstAttribute="leading" secondItem="VLg-kC-eSv" secondAttribute="leading" constant="16" id="vTB-q1-VzL"/>
                                     <constraint firstAttribute="bottom" secondItem="whm-TW-zJg" secondAttribute="bottom" id="zkD-cY-HSR"/>
                                 </constraints>
@@ -695,6 +721,7 @@
     </scenes>
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
+        <image name="bookmark.fill" catalog="system" width="112" height="128"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="house" catalog="system" width="128" height="106"/>

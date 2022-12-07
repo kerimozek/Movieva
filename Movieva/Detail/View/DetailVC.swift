@@ -25,12 +25,21 @@ class DetailVC: UIViewController {
     @IBOutlet weak var movieOrigin: UILabel!
     @IBOutlet weak var movieDate: UILabel!
     var detail: BaseModel?
-    
+    let viewModel = DetailVM()
+    var detailId: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setShadow()
         setValues()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       // id ye göre sorgu at detail'e eşitle
+        ReviewVM.movieID = Int(detailId!)
+        
+       //  bunu en aşağı delegate içinde detay verirken ekle
+       // ContainerViewAbout.detailAbout = item.detail
     }
     
     private func setupUI() {
@@ -70,6 +79,14 @@ class DetailVC: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let detail = detail else { return }
+        
+        self.viewModel.saveData(title: detail.title!, detail: detail.overview!, movieId: "\(detail.id!)", image: detail.poster_path!, imdb: "\(detail.vote_average!)", origin: detail.original_language!)
+        
+    }
+    
     
     @IBAction func changeContainer(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {

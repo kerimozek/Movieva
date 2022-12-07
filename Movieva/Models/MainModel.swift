@@ -20,6 +20,7 @@ protocol BaseModel {
     var video: Bool? { get set }
     var vote_average: Double? { get set }
     var vote_count: Int? { get set }
+    
 }
 
 struct Movie: Codable {

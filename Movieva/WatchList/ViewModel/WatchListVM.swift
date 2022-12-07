@@ -17,20 +17,12 @@ class WatchListVM {
     static let shared = WatchListVM()
     weak var delegate: WatchListViewModelDelegate?
     private init () { }
-    private var page: Int = 1
     
-    var watchListMovie: [ResultMovie] = []
-
-    func getMovies(complete: @escaping((String?)->())) {
-        PopularManager.shared.getPopular(page: page) { [self] items, errorMessage in
-            
-            if let items = items {
-                self.watchListMovie.append(contentsOf: items.results!)
-                self.page += 1
-                self.delegate?.didGetMovies(isDone: true)
-            }
-            complete(errorMessage)
-            self.delegate?.didGetMovies(isDone: false)
-        }
+    var favoritesArray = [Favorites]()
+    
+    let coreDataHelper = CoreDataHelper()
+    
+    func fetchData() {
+        favoritesArray = coreDataHelper.fetchData() ?? [Favorites]()
     }
 }
