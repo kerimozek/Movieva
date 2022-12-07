@@ -31,12 +31,12 @@ class WatchListCell: UITableViewCell {
     }
 
 
-    func configureCell(item: ResultMovie) {
+    func configureCell(item: Favorites) {
         self.movieTitle.text = item.title
-        self.detailLabel.text = item.overview
-        let image = NetworkHelper.shared.baseImageUrl + item.poster_path!
+        self.detailLabel.text = item.detail
+        let image = NetworkHelper.shared.baseImageUrl + item.image!
         self.watchListImageView.kf.setImage(with: URL(string: image))
-        self.imdbLabel.text = "IMDB: \(item.vote_average ?? 7.6)"
-        self.genreLabel.text = "Origin: \(item.original_language!.uppercased())"
+        self.imdbLabel.text = "IMDB: \(item.imdb!)"
+        self.genreLabel.text = "Origin: \(item.origin!.uppercased())"
     }
 }
