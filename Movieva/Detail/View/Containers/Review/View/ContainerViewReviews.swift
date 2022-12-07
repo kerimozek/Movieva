@@ -18,6 +18,14 @@ class ContainerViewReviews: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        ReviewVM.shared.getReviews{ errorMessage in
+            if let errorMessage = errorMessage {
+                print("error \(errorMessage)")
+            }
+        }
+    }
 
     private func setupUI() {
         tableView.delegate = self
@@ -26,11 +34,7 @@ class ContainerViewReviews: UIViewController {
         tableView.rowHeight  = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         ReviewVM.shared.delegate = self
-        ReviewVM.shared.getReviews{ errorMessage in
-            if let errorMessage = errorMessage {
-                print("error \(errorMessage)")
-            }
-        }
+        
     }
 }
 
