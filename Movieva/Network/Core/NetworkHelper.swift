@@ -53,4 +53,8 @@ enum APIURLs {
     static func movieDetail(movieID: Int) -> String {
         "https://api.themoviedb.org/3/movie/\(movieID)?api_key=\(apiKey)&language=en-US"
     }
+    
+    static func cast(movieID: Int) -> String {
+        "https://api.themoviedb.org/3/movie/\(movieID)/credits?api_key=\(apiKey)&language=en-US"
+    }
 }

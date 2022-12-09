@@ -19,7 +19,6 @@ class WatchListVM {
     private init () { }
     
     var favoritesArray = [Favorites]()
-    
     let coreDataHelper = CoreDataHelper()
     
     func fetchData() {

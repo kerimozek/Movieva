@@ -22,7 +22,7 @@ extension Favorites {
     @NSManaged public var image: String?
     @NSManaged public var origin: String?
     @NSManaged public var imdb: String?
-
+    @NSManaged public var date: Date?
 }
 
 extension Favorites : Identifiable {

@@ -14,18 +14,24 @@ class CoreDataHelper {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    
     func fetchData() -> [Favorites]? {
+        let fetchRequest: NSFetchRequest<Favorites> = Favorites.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Favorites.date), ascending: false)]
+        var fetched: [Favorites] = []
         do {
-            return try self.context.fetch(Favorites.fetchRequest())
+            fetched = try self.context.fetch(Favorites.fetchRequest())
+    
         } catch {
             print("error: \(error.localizedDescription)")
         }
-        return nil
+        return fetched
     }
     
     func saveData(title: String, detail: String, movieId: String, image: String, imdb: String, origin: String) {
         let newItem = Favorites(context: context)
-
+        
+        newItem.setValue(Date(), forKey: #keyPath(Favorites.date))
         newItem.setValue(title, forKey: #keyPath(Favorites.title))
         newItem.setValue(movieId, forKey: #keyPath(Favorites.movieId))
         newItem.setValue(detail, forKey: #keyPath(Favorites.detail))
