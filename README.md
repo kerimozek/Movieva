@@ -1,7 +1,7 @@
 # Movieva
 
 
-<img src="https://github.com/kerimozek/Movieva/blob/main/Movieva/app%20images/movieva%20app.png" width="500"> <img src="https://github.com/kerimozek/Movieva/blob/main/Movieva/app%20images/movieva%20app%202.png" width="500">
+<img src="https://github.com/kerimozek/Movieva/blob/main/Movieva/app%20images/movieva%20app%20icon.png"> 
 
 
 
@@ -38,3 +38,5 @@
 
 ### Library
 - Kingfisher
+
+<img src="https://github.com/kerimozek/Movieva/blob/main/Movieva/app%20images/movieva%20app.mp4"> 
