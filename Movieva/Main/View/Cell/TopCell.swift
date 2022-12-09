@@ -27,7 +27,7 @@ class TopCell: UICollectionViewCell {
     
     func configureCell(item: ResultMovie) {
         self.movieLabel.text = item.title
-        let image = NetworkHelper.shared.baseImageUrl + item.backdrop_path!
+        let image = NetworkHelper.shared.baseBackImageUrl + item.backdrop_path!
         self.topCellImageView.kf.setImage(with: URL(string: image))
     }
 }

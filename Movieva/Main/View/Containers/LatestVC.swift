@@ -47,8 +47,7 @@ extension LatestVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-        vc.detail = LatestVM.shared.latest[indexPath.row]
-        ReviewVM.movieID = LatestVM.shared.latest[indexPath.row].id
+        DetailVM.shared.movieID = LatestVM.shared.latest[indexPath.row].id
         ContainerViewAbout.detailAbout = LatestVM.shared.latest[indexPath.row].overview
         navigationController?.pushViewController(vc, animated: true)
     }

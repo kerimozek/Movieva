@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class CoreDataHelper {
     static let shared = CoreDataHelper()
@@ -39,14 +40,22 @@ class CoreDataHelper {
         }
     }
     
-    func deleteData(index: Int) {
-        if let dataArray = fetchData() {
-            context.delete(dataArray[index])
-            do {
-                try self.context.save()
-            } catch {
-                print("error: \(error.localizedDescription)")
+    func deleteData(index: String) {
+        let fetchRequest: NSFetchRequest<Favorites> = Favorites.fetchRequest()
+        let predicate = NSPredicate(format: "(movieId = %@)", index as CVarArg)
+        
+        fetchRequest.predicate = predicate
+        
+        do {
+            let context = self.context
+            let result = try context.fetch(fetchRequest).first
+            
+            if let result = result {
+                context.delete(result)
+                try context.save()
             }
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }

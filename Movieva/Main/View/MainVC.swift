@@ -83,8 +83,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-        vc.detail = MainVM.shared.topRated[indexPath.row]
-        ReviewVM.movieID = MainVM.shared.topRated[indexPath.row].id
+        DetailVM.shared.movieID = MainVM.shared.topRated[indexPath.row].id
         ContainerViewAbout.detailAbout = MainVM.shared.topRated[indexPath.row].overview
         navigationController?.pushViewController(vc, animated: true)
     }

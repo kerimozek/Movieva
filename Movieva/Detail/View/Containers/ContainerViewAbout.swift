@@ -17,4 +17,5 @@ class ContainerViewAbout: UIViewController {
         textView.isEditable = false
         textView.text = ContainerViewAbout.detailAbout
     }
+   
 }
