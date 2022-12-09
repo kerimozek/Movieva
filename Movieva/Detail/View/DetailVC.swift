@@ -13,8 +13,6 @@ class DetailVC: UIViewController {
     
     
     @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var imageViewTop: UIImageView!
     @IBOutlet weak var containerViewAbout: UIView!
     @IBOutlet weak var containerViewReviews: UIView!
@@ -40,6 +38,7 @@ class DetailVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        CastVM.shared.movieID = DetailVM.shared.movieID
         ReviewVM.shared.movieID = DetailVM.shared.movieID
         DetailVM.shared.getMovieDetail{ errorMessage in
             if let errorMessage = errorMessage {
@@ -63,10 +62,6 @@ class DetailVC: UIViewController {
         selectedSegment.setTitleTextAttributes([.foregroundColor: UIColor(red: 0.85, green: 0.84, blue: 0.91, alpha: 1.00)], for: .normal)
         containerViewReviews.alpha = 0
         containerViewCast.alpha = 0
-        backView.layer.cornerRadius = 10
-        backView.alpha = 0.7
-        backButton.tintColor = UIColor(red: 0.08, green: 0.06, blue: 0.22, alpha: 1.00)
-        navigationController?.navigationBar.isHidden = true
         DetailVM.shared.fetchData()
         DetailVM.shared.delegate = self
     }
@@ -81,9 +76,6 @@ class DetailVC: UIViewController {
         imageViewBottom.clipsToBounds = true
     }
     
-    @IBAction func backButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let detail = detail else { return }

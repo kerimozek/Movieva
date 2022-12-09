@@ -33,7 +33,6 @@ class DetailVM {
             
             if let items = items {
                 self.movieDetail = items
-                print(items)
                 self.delegate?.didGetMovie(isDone: true)
                
             }
