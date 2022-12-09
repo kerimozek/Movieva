@@ -22,6 +22,7 @@
 ### Swift
 - Delegate
 - Protocols
+- Singleton Class
   
 ### UIKit
 - Infinite Scroll CollectionView
@@ -32,6 +33,9 @@
 ### Network
 - API
 - URLSession
+
+### Design Pattern
+- MVVM
   
 ### Database
 - CoreData
