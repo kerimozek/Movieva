@@ -7,11 +7,13 @@
 
 import UIKit
 import Kingfisher
+import CoreData
 
 class DetailVC: UIViewController {
-
-    @IBOutlet weak var backView: UIView!
     
+    
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var imageViewTop: UIImageView!
     @IBOutlet weak var containerViewAbout: UIView!
@@ -24,22 +26,34 @@ class DetailVC: UIViewController {
     @IBOutlet weak var moviePoint: UILabel!
     @IBOutlet weak var movieOrigin: UILabel!
     @IBOutlet weak var movieDate: UILabel!
-    var detail: BaseModel?
-    let viewModel = DetailVM()
-    var detailId: String!
+    var detail: MovieDetail?
+    var buttonChange: ButtonChange = .add
+    enum ButtonChange {
+        case add
+        case delete
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setShadow()
-        setValues()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       // id ye göre sorgu at detail'e eşitle
-        ReviewVM.movieID = Int(detailId!)
+        ReviewVM.shared.movieID = DetailVM.shared.movieID
+        DetailVM.shared.getMovieDetail{ errorMessage in
+            if let errorMessage = errorMessage {
+                print("error \(errorMessage)")
+            }
+        }
         
-       //  bunu en aşağı delegate içinde detay verirken ekle
-       // ContainerViewAbout.detailAbout = item.detail
+        for i in DetailVM.shared.favoritesArray {
+            if i.movieId == "\(DetailVM.shared.movieID!)" {
+                addButton.setImage(UIImage.init(named: "remove"), for: .normal)
+                buttonChange = .delete
+                break
+            }
+        }
     }
     
     private func setupUI() {
@@ -53,17 +67,8 @@ class DetailVC: UIViewController {
         backView.alpha = 0.7
         backButton.tintColor = UIColor(red: 0.08, green: 0.06, blue: 0.22, alpha: 1.00)
         navigationController?.navigationBar.isHidden = true
-    }
-    
-    private func setValues() {
-        let image = NetworkHelper.shared.baseImageUrl + (detail?.backdrop_path!)!
-        let image2 = NetworkHelper.shared.baseImageUrl + (detail?.poster_path!)!
-        self.imageViewTop.kf.setImage(with: URL(string: image))
-        self.imageViewBottom.kf.setImage(with: URL(string: image2))
-        self.movieLabel.text = detail?.title
-        self.movieDate.text = detail?.release_date
-        self.moviePoint.text = "\(detail?.vote_average ?? 6.9)"
-        self.movieOrigin.text = detail?.original_language?.uppercased()
+        DetailVM.shared.fetchData()
+        DetailVM.shared.delegate = self
     }
     
     private func setShadow() {
@@ -82,9 +87,17 @@ class DetailVC: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let detail = detail else { return }
-        
-        self.viewModel.saveData(title: detail.title!, detail: detail.overview!, movieId: "\(detail.id!)", image: detail.poster_path!, imdb: "\(detail.vote_average!)", origin: detail.original_language!)
-        
+        if buttonChange == .add {
+            DetailVM.shared.saveData(title: detail.title!, detail: detail.overview!, movieId: "\(detail.id!)", image: detail.posterPath!, imdb: "\(detail.voteAverage!)", origin: detail.originalLanguage!)
+            
+            addButton.setImage(UIImage.init(named: "remove"), for: .normal)
+            buttonChange = .delete
+        } else {
+            
+            DetailVM.shared.deleteData(index: "\(detail.id!)")
+            addButton.setImage(UIImage.init(named: "add"), for: .normal)
+            buttonChange = .add
+        }
     }
     
     
@@ -107,6 +120,24 @@ class DetailVC: UIViewController {
                 self.containerViewReviews.alpha = 0
                 self.containerViewCast.alpha = 1
             })
+        }
+    }
+}
+
+extension DetailVC: DetailDelegate {
+    func didGetMovie(isDone: Bool) {
+        if isDone {
+            DispatchQueue.main.async {
+                self.detail = DetailVM.shared.movieDetail
+                let image = NetworkHelper.shared.baseBackImageUrl + (self.detail?.backdropPath!)!
+                let image2 = NetworkHelper.shared.baseImageUrl + (self.detail?.posterPath!)!
+                self.imageViewTop.kf.setImage(with: URL(string: image))
+                self.imageViewBottom.kf.setImage(with: URL(string: image2))
+                self.movieLabel.text = self.detail?.title
+                self.movieDate.text = self.detail?.releaseDate
+                self.moviePoint.text = "\(self.detail?.voteAverage ?? 6.9)"
+                self.movieOrigin.text = self.detail?.originalLanguage?.uppercased()
+            }
         }
     }
 }
