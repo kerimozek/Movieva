@@ -50,11 +50,9 @@ extension WatchListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
         let item = WatchListVM.shared.favoritesArray[indexPath.row]
-        vc.detailId = item.movieId
-        
-       
+        DetailVM.shared.movieID = Int(item.movieId!)
+        ContainerViewAbout.detailAbout = item.detail
         navigationController?.pushViewController(vc, animated: true)
-        print("tapped watchlist")
     }
     
     

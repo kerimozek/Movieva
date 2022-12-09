@@ -14,9 +14,6 @@ class TopRatedManager {
     // MARK: - TOP RATED API https://api.themoviedb.org/3/movie/top_rated?api_key=fd24fe5ba58021d3f54a2a7c04297951&language=en-US&page=1 -
     
     
-    
-
-    
     func getTopRated(page: Int, complete: @escaping((Movie?, String?)->())) {
         
         let url = APIURLs.topRatedMovies(page: page)
