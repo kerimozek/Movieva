@@ -11,7 +11,6 @@ class ContainerViewReviews: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let reviewCell = "ReviewCell"
-    static var detailReview: BaseModel?
     
     
     override func viewDidLoad() {
@@ -34,7 +33,6 @@ class ContainerViewReviews: UIViewController {
         tableView.rowHeight  = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         ReviewVM.shared.delegate = self
-        
     }
 }
 
