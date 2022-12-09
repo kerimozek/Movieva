@@ -39,4 +39,4 @@
 ### Library
 - Kingfisher
 
-<img src="https://github.com/kerimozek/Movieva/blob/main/Movieva/app%20images/movieva%20app.mp4"> 
+https://user-images.githubusercontent.com/101734440/206804867-98f7f849-e1d1-45b0-9ef6-68de57f1b624.mp4
