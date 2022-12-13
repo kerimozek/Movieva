@@ -24,8 +24,8 @@ class TopRatedVM {
     func getTopRated(complete: @escaping((String?)->())) {
         TopRatedManager.shared.getTopRated(page: page) { items, errorMessage in
             
-            if let items = items {
-                self.topRated.append(contentsOf: items.results!)
+            if let items = items?.results {
+                self.topRated.append(contentsOf: items)
                 self.page += 1
                 self.delegate?.didGetTopRated(isDone: true)
             }
