@@ -31,30 +31,30 @@ let apiKey = "fd24fe5ba58021d3f54a2a7c04297951"
 enum APIURLs {
     
     static func popularMovies(page: Int) -> String {
-    "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)&language=en-US&page=\(page)"
+        "\(NetworkHelper.shared.baseUrl)popular?api_key=\(apiKey)&language=en-US&page=\(page)"
     }
     
     static func topRatedMovies(page: Int) -> String {
-    "https://api.themoviedb.org/3/movie/top_rated?api_key=\(apiKey)&language=en-US&page=\(page)"
+        "\(NetworkHelper.shared.baseUrl)top_rated?api_key=\(apiKey)&language=en-US&page=\(page)"
     }
     
     static func latestMovies(page: Int) -> String {
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)&language=en-US&page=\(page)"
+        "\(NetworkHelper.shared.baseUrl)now_playing?api_key=\(apiKey)&language=en-US&page=\(page)"
     }
     
     static func upcomingMovies(page: Int) -> String {
-        "https://api.themoviedb.org/3/movie/upcoming?api_key=\(apiKey)&language=en-US&page=\(page)"
+        "\(NetworkHelper.shared.baseUrl)upcoming?api_key=\(apiKey)&language=en-US&page=\(page)"
     }
     
     static func review(movieID: Int) -> String {
-        "https://api.themoviedb.org/3/movie/\(movieID)/reviews?api_key=\(apiKey)&language=en-US&page=1"
+        "\(NetworkHelper.shared.baseUrl)\(movieID)/reviews?api_key=\(apiKey)&language=en-US&page=1"
     }
     
     static func movieDetail(movieID: Int) -> String {
-        "https://api.themoviedb.org/3/movie/\(movieID)?api_key=\(apiKey)&language=en-US"
+        "\(NetworkHelper.shared.baseUrl)\(movieID)?api_key=\(apiKey)&language=en-US"
     }
     
     static func cast(movieID: Int) -> String {
-        "https://api.themoviedb.org/3/movie/\(movieID)/credits?api_key=\(apiKey)&language=en-US"
+        "\(NetworkHelper.shared.baseUrl)\(movieID)/credits?api_key=\(apiKey)&language=en-US"
     }
 }
