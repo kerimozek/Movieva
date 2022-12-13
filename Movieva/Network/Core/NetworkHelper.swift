@@ -20,6 +20,7 @@ enum ErrorTypes: String, Error {
 
 class NetworkHelper {
     static let shared = NetworkHelper()
+    private init () {}
     let baseUrl = "https://api.themoviedb.org/3/movie/"
     let apiKey = "fd24fe5ba58021d3f54a2a7c04297951"
     let baseImageUrl = "https://image.tmdb.org/t/p/w200"
